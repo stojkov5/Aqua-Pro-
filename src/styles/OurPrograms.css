@@ -1,0 +1,32 @@
+/* Background + Layout */
+.programs-section {
+  margin-top: 4rem;
+}
+
+.programs-wrapper {
+  background-color: rgba(0, 124, 247, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  color: #fff;
+  border-radius: 1rem;
+}
+
+/* Fluid Typography */
+.programs-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.programs-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  text-align: center;
+  line-height: 1.6;
+  margin: 0 auto 1.5rem;
+  max-width: 800px;
+  color: #f0f0f0;
+}
+
+.read-more {
+  color: #ffffff !important;
+}

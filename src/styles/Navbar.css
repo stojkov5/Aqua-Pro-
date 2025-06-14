@@ -1,5 +1,6 @@
 /* Nav link styles */
 .nav-link {
+  color: #ffffff;
   position: relative;
   padding: 0.5rem 1.5rem;
   border-radius: 9999px;
@@ -74,4 +75,7 @@
 
 .nav-link:hover .wave-underline {
   transform: scaleX(1.5);
+}
+.mobile-menu nav a{
+  color: #ffffff !important;
 }

@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   background-image: url("/public/background.jpg");
   background-size: cover;
@@ -16,67 +16,58 @@ body::after {
   z-index: -1;
 }
 
-.roboto-100 {
-  font-family: "Roboto", sans-serif;
+.montserrat-100 {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
 
-.roboto-200 {
-  font-family: "Roboto", sans-serif;
+.montserrat-200 {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
-.roboto-300 {
-  font-family: "Roboto", sans-serif;
+.montserrat-300 {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
-.roboto-400 {
-  font-family: "Roboto", sans-serif;
+.montserrat-400 {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
-.roboto-500 {
-  font-family: "Roboto", sans-serif;
+.montserrat-500 {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
-.roboto-600 {
-  font-family: "Roboto", sans-serif;
+.montserrat-600 {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
-.roboto-700 {
-  font-family: "Roboto", sans-serif;
+.montserrat-700 {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
-.roboto-800 {
-  font-family: "Roboto", sans-serif;
+.montserrat-800 {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
-.roboto-900 {
-  font-family: "Roboto", sans-serif;
+.montserrat-900 {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
