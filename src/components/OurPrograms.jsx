@@ -106,19 +106,20 @@ const OurPrograms = () => {
           </Row>
 
           {/* Bottom-Right Arrow */}
+          {/* CTA link */}
           <motion.div
-            className="absolute bottom-4 right-4"
+            className="absolute bottom-2 right-2"
             variants={itemVariants}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             <Link
-              to="/programs"
-              className="flex items-center gap-2 text-white read-more"
+              to="/team"
+              className="meet-team-btn flex items-center gap-2 justify-center"
             >
               <small className="montserrat-300">View Full Schedule</small>
               <svg
-                className="w-6 h-6 "
+                className="w-6 h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"

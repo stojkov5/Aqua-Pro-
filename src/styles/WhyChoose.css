@@ -1,0 +1,52 @@
+
+.why-wrapper {
+  background-color: rgba(0, 124, 247, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Typography */
+.why-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.why-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+/* Icon cards */
+.why-item {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.why-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.why-icon {
+  font-size: clamp(1.5rem, 1.4rem + 0.5vw, 2rem);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-label {
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 1rem);
+  color: #f0f0f0;
+}

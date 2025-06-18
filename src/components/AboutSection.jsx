@@ -58,16 +58,20 @@ const AboutSection = () => {
           </motion.div>
 
           {/* Bottom-Right Animated Arrow */}
+          {/* CTA link */}
           <motion.div
             className="absolute bottom-2 right-2"
             variants={itemVariants}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <Link to="/about" className="flex justify-center items-center read-more">
-              <small className="montserrat-300">READ MORE</small>
+            <Link
+              to="/team"
+              className="meet-team-btn flex items-center gap-2 justify-center"
+            >
+              <small className="montserrat-300">Read More</small>
               <svg
-                className="w-8 h-8 text-white "
+                className="w-6 h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"

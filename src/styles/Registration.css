@@ -1,0 +1,72 @@
+.registration-container {
+  background-color: rgba(0, 124, 247, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+/* Title styling */
+.registration-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: white;
+}
+
+/* Pricing cards */
+.pricing-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+
+.registration-btn {
+  all: unset;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  min-width: 180px;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.registration-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+.registration-steps {
+  display: flex;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  border-radius: 9999px;
+}
+
+.registration-steps li {
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.registration-steps li::marker {
+  color: #ffffff;
+  font-weight: bold;
+}

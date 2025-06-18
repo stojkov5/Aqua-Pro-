@@ -4,6 +4,11 @@ import { Row, Col } from "antd";
 import { motion } from "framer-motion";
 import AboutSection from "../components/AboutSection";
 import OurPrograms from "../components/OurPrograms";
+import WhyChoose from "../components/WhyChoose";
+import Coach from "../components/Coach";
+import Testimonials from "../components/Testimonials";
+import Location from "../components/Location";
+import Registration from "../components/Registration";
 const textVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i) => ({
@@ -77,6 +82,16 @@ const Home = () => {
       <AboutSection />
       <div className="bg-blue-950 h-10"></div>
       <OurPrograms />
+      <div className="bg-blue-950 h-10"></div>
+      <WhyChoose />
+      <div className="bg-blue-950 h-10"></div>
+      <Coach />
+      <div className="bg-blue-950 h-10"></div>
+      <Testimonials />
+      <div className="bg-blue-950 h-10"></div>
+      <Location />
+      <div className="bg-blue-950 h-10"></div>
+      <Registration />
     </>
   );
 };

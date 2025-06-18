@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
+import { useLocation } from "react-router";
 import { useNavigate } from "react-router";
 import { MenuOutlined } from "@ant-design/icons";
 import { Button, Row, Col } from "antd";
@@ -20,6 +21,8 @@ export default function Navbar() {
   const [hoverXY, setHoverXY] = useState({ x: 0, y: 0 });
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const location = useLocation();
 
   const navigate = useNavigate();
 
@@ -34,10 +37,20 @@ export default function Navbar() {
 
   const handleLinkClick = (to) => {
     setIsTransitioning(true);
-    setTimeout(() => {
-      navigate(to);
-      setIsTransitioning(false);
-    }, 300); // Match this with the loading animation duration
+    setProgress(0);
+
+    let count = 0;
+    const interval = setInterval(() => {
+      count += 1;
+      setProgress(count);
+      if (count >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+          navigate(to);
+          setIsTransitioning(false);
+        }, 500); // slight pause after 100%
+      }
+    }, 10); 
   };
 
   return (
@@ -52,27 +65,31 @@ export default function Navbar() {
           {/* Center: Navigation Links (Desktop only) */}
           {!isMobile && (
             <nav className="flex gap-6 text-white z-10">
-              {navLinks.map(({ to, label }, index) => (
-                <button
-                  key={to}
-                  onClick={() => handleLinkClick(to)}
-                  onMouseMove={(e) => handleMouseMove(e, index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                  className="nav-link relative"
-                >
-                  <span className="relative z-10">{label}</span>
-                  {hoveredIndex === index && (
-                    <span
-                      className="splash"
-                      style={{
-                        top: hoverXY.y - 64,
-                        left: hoverXY.x - 64,
-                      }}
-                    />
-                  )}
-                  <span className="wave-underline" />
-                </button>
-              ))}
+              {navLinks.map(({ to, label }, index) => {
+                const isActive = location.pathname === to;
+
+                return (
+                  <button
+                    key={to}
+                    onClick={() => handleLinkClick(to)}
+                    onMouseMove={(e) => handleMouseMove(e, index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                    className={`nav-link relative ${isActive ? "active" : ""}`}
+                  >
+                    <span className="relative z-10">{label}</span>
+                    {(hoveredIndex === index || isActive) && (
+                      <span
+                        className="splash"
+                        style={{
+                          top: hoverXY.y - 64,
+                          left: hoverXY.x - 64,
+                        }}
+                      />
+                    )}
+                    <span className="wave-underline" />
+                  </button>
+                );
+              })}
             </nav>
           )}
 
@@ -186,28 +203,60 @@ export default function Navbar() {
         </AnimatePresence>
       </Col>
 
-      {/* Transition Loader */}
-      <AnimatePresence>
-        {isTransitioning && (
-          <motion.div
-            className="fixed top-0 left-0 w-full h-full bg-black flex items-center justify-center z-[100]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+     {/* Transition Loader */}
+<AnimatePresence>
+  {isTransitioning && (
+    <motion.div
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-[100] bg-blue-300 bg-linear-to-b to-blue-800 bg-opacity-90"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.8, opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="w-[80%] max-w-[500px] text-center space-y-6"
+      >
+        {/* Logo */}
+        <img
+          src="./Logo.png"
+          alt="Logo"
+          className="w-16 h-16 mx-auto animate-bounce"
+        />
+
+        {/* Progress Bar */}
+        <div className="relative w-full h-10 bg-gray-800 rounded-full overflow-hidden">
+          {/* Water fill background */}
+          <div
+            className="absolute inset-0 water-fill"
+            style={{ width: `${progress}%` }}
           >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-white text-3xl font-bold"
+            {/* Wave SVG overlay */}
+            <svg
+              className="wave-svg"
+              viewBox="0 0 100 10"
+              preserveAspectRatio="none"
             >
-              Loading...
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <path
+                d="M0 10 Q 25 0, 50 10 T 100 10 V10 H0 Z"
+                fill="rgba(255,255,255,0.2)"
+              />
+            </svg>
+          </div>
+
+          {/* Percent text */}
+          <div className="relative z-10 text-white text-sm h-full flex items-center justify-center font-semibold">
+            {progress}%
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
     </Row>
   );
 }

@@ -15,6 +15,13 @@
 .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link.active .wave-underline {
+  transform: scaleX(1.5);
+}
 
 /* Language switcher button (styled same as nav-link) */
 .lang-button {
@@ -76,6 +83,37 @@
 .nav-link:hover .wave-underline {
   transform: scaleX(1.5);
 }
-.mobile-menu nav a{
+.mobile-menu nav a {
   color: #ffffff !important;
+}
+
+.water-fill {
+  height: 100%;
+  background: linear-gradient(to top, #00bfff, #1e90ff);
+  animation: wave 4s linear infinite;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  transition: width 0.2s ease-in-out;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.wave-svg {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  animation: waveMove 2s infinite linear;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
