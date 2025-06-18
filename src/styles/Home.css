@@ -3,7 +3,7 @@
 .landing {
   position: relative;
   height: 120vh;
-  background-image: url("/Home/Landing.png");
+  background-image: url("/Home/Landing.webp");
   background-attachment: fixed; /* This makes it scroll with content */
   background-size: cover;
   background-position: 0% 35%;
