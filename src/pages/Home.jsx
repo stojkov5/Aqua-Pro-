@@ -78,19 +78,19 @@ const Home = () => {
           </Row>
         </Col>
       </Row>
-      <div className="bg-blue-950 h-10"></div>
+      <div className="bg-black h-2"></div>
       <AboutSection />
-      <div className="bg-blue-950 h-10"></div>
+      {/* <div className="bg-blue-950 h-10"></div> */}
       <OurPrograms />
-      <div className="bg-blue-950 h-10"></div>
+      {/* <div className="bg-blue-950 h-10"></div> */}
       <WhyChoose />
-      <div className="bg-blue-950 h-10"></div>
+      {/* <div className="bg-blue-950 h-10"></div> */}
       <Coach />
-      <div className="bg-blue-950 h-10"></div>
+      {/* <div className="bg-blue-950 h-10"></div> */}
       <Testimonials />
-      <div className="bg-blue-950 h-10"></div>
+      {/* <div className="bg-blue-950 h-10"></div> */}
       <Location />
-      <div className="bg-blue-950 h-10"></div>
+      {/* <div className="bg-blue-950 h-10"></div> */}
       <Registration />
     </>
   );
