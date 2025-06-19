@@ -30,8 +30,7 @@ const About = () => {
     <motion.div
       className="about-section py-30"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      animate="visible"
       variants={containerVariants}
     >
       <Row justify="center">
