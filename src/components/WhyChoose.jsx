@@ -88,7 +88,7 @@ const WhyChoose = () => {
                 md={8}
                 className="flex justify-center"
               >
-                <motion.div variants={itemVariants} className="why-item w-full">
+                <motion.div variants={itemVariants} className="why-item bg-white/10 backdrop-blur-md text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full w-full">
                   <div className="why-icon">{item.icon}</div>
                   <div className="why-label montserrat-500">{item.label}</div>
                 </motion.div>

@@ -2,11 +2,11 @@
 
 .landing {
   position: relative;
-  height: 120vh;
+  height: 100vh;
   background-image: url("/Home/Landing.webp");
-  background-attachment: fixed; /* This makes it scroll with content */
+  background-attachment: fixed !important;
   background-size: cover;
-  background-position: 0% 35%;
+  background-position-y: 30% ;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
@@ -69,15 +69,20 @@
 /* Responsive layout */
 .button-container {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
+  justify-content: center;
   align-items: center;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .button-container {
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .landing {
+    background-attachment: scroll !important;
+    background-position: center !important;
   }
 }
 
