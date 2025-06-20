@@ -1,22 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useState, useRef } from "react";
 import { Row, Col, Card, Button, Modal } from "antd";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useMediaQuery } from "react-responsive"; // install if not already
 import "../styles/CoachPage.css";
-
-const containerVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      when: "beforeChildren",
-      staggerChildren: 0.2,
-    },
-  },
-};
 
 const itemVariants = {
   hidden: { opacity: 0, scale: 0.95 },
@@ -27,19 +16,11 @@ const itemVariants = {
   },
 };
 
-const modalVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.4 },
-  },
-};
-
 const Coaches = () => {
   const { t } = useTranslation();
   const [selectedCoach, setSelectedCoach] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const coachesData = t("coaches.data", { returnObjects: true });
 
@@ -55,9 +36,12 @@ const Coaches = () => {
 
   return (
     <motion.div
-      variants={containerVariants}
       initial="hidden"
       animate="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+      }}
     >
       <Row justify="center" className="py-30">
         <Col span={20} className="coaches-section text-center">
@@ -75,43 +59,55 @@ const Coaches = () => {
           </motion.span>
 
           <Row gutter={[24, 24]} justify="center" className="mt-10">
-            {coachesData.map((coach) => (
-              <Col
-                key={coach.id}
-                xs={24}
-                sm={12}
-                md={8}
-                lg={8}
-                className="flex justify-center"
-              >
-                <motion.div variants={itemVariants}>
-                  <Card
-                    hoverable
-                    cover={
-                      <img
-                        alt={coach.name}
-                        src={coach.image}
-                        className="coach-card-img"
-                      />
+            {coachesData.map((coach) => {
+              const ref = useRef(null);
+              const inView = useInView(ref, { once: true, margin: "0px 0px -50% 0px" });
+
+              return (
+                <Col
+                  key={coach.id}
+                  xs={24}
+                  sm={12}
+                  md={8}
+                  lg={8}
+                  className="flex justify-center"
+                >
+                  <motion.div
+                    ref={ref}
+                    variants={itemVariants}
+                    initial="hidden"
+                    animate={
+                      isMobile ? (inView ? "visible" : "hidden") : "visible"
                     }
-                    className="coach-card"
                   >
-                    <h3 className="coach-name montserrat-600">
-                      {coach.name}
-                    </h3>
-                    <p className="coach-about montserrat-300">
-                      {coach.about}
-                    </p>
-                    <Button
-                      className="coach-button"
-                      onClick={() => handleOpenModal(coach)}
+                    <Card
+                      hoverable
+                      cover={
+                        <img
+                          alt={coach.name}
+                          src={coach.image}
+                          className="coach-card-img"
+                        />
+                      }
+                      className="coach-card"
                     >
-                      {t("coaches.readMore")}
-                    </Button>
-                  </Card>
-                </motion.div>
-              </Col>
-            ))}
+                      <h3 className="coach-name montserrat-600">
+                        {coach.name}
+                      </h3>
+                      <p className="coach-about montserrat-300">
+                        {coach.about}
+                      </p>
+                      <Button
+                        className="coach-button"
+                        onClick={() => handleOpenModal(coach)}
+                      >
+                        {t("coaches.readMore")}
+                      </Button>
+                    </Card>
+                  </motion.div>
+                </Col>
+              );
+            })}
           </Row>
         </Col>
 
@@ -127,7 +123,10 @@ const Coaches = () => {
               className="modal-content"
               initial="hidden"
               animate="visible"
-              variants={modalVariants}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
             >
               <img
                 src={selectedCoach.image}
