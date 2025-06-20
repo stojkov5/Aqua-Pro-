@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { Row, Col } from "antd";
+import { useTranslation } from "react-i18next";
 import "../styles/Registration.css";
 
 const containerVariants = {
@@ -25,25 +26,11 @@ const itemVariants = {
   },
 };
 
-const pricingTiers = [
-  {
-    title: "Monthly Plan",
-    price: "€60 / month",
-    details: "Includes 2 sessions per week.",
-  },
-  {
-    title: "Private Lessons",
-    price: "€35 / session",
-    details: "One-on-one coaching, flexible scheduling.",
-  },
-  {
-    title: "Family Package",
-    price: "€160 / month",
-    details: "Covers up to 3 family members, 2 sessions/week each.",
-  },
-];
-
 const Registration = () => {
+  const { t } = useTranslation();
+
+  const pricingTiers = t("registration.plans", { returnObjects: true });
+
   return (
     <motion.div
       className="registration-section my-16"
@@ -62,7 +49,7 @@ const Registration = () => {
             className="registration-title montserrat-700 mb-4"
             variants={itemVariants}
           >
-            Get Started Today
+            {t("registration.title")}
           </motion.h2>
 
           {/* Steps */}
@@ -70,9 +57,9 @@ const Registration = () => {
             className="registration-steps montserrat-300 mb-10 text-gray-200 text-left mx-auto max-w-2xl list-decimal pl-5"
             variants={itemVariants}
           >
-            <li>Choose your program</li>
-            <li>Book a free trial</li>
-            <li>Join the Aqua Pro family</li>
+            <li>{t("registration.steps.0")}</li>
+            <li>{t("registration.steps.1")}</li>
+            <li>{t("registration.steps.2")}</li>
           </motion.ol>
 
           {/* Pricing Cards */}
@@ -101,7 +88,7 @@ const Registration = () => {
               whileTap={{ scale: 0.98 }}
               className="registration-btn montserrat-300"
             >
-              Register Now
+              {t("registration.cta")}
             </motion.button>
           </motion.div>
         </Col>

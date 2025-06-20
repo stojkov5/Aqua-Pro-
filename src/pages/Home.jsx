@@ -2,6 +2,7 @@
 import "../styles/Home.css";
 import { Row, Col } from "antd";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import AboutSection from "../components/AboutSection";
 import OurPrograms from "../components/OurPrograms";
 import WhyChoose from "../components/WhyChoose";
@@ -9,6 +10,7 @@ import Coach from "../components/Coach";
 import Testimonials from "../components/Testimonials";
 import Location from "../components/Location";
 import Registration from "../components/Registration";
+
 const textVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i) => ({
@@ -19,6 +21,8 @@ const textVariants = {
 };
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Row className="landing overflow-hidden" justify="center">
@@ -32,7 +36,7 @@ const Home = () => {
                 custom={0}
                 variants={textVariants}
               >
-                Dive into Excellence. Swim with Confidence.
+                {t("home.title")}
               </motion.h1>
 
               <motion.h3
@@ -42,7 +46,7 @@ const Home = () => {
                 custom={1}
                 variants={textVariants}
               >
-                World-class swim training for all ages – right here in Skopje.
+                {t("home.subtitle")}
               </motion.h3>
 
               <motion.div
@@ -60,7 +64,7 @@ const Home = () => {
                   }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Book A Trial Lesson
+                  {t("home.bookLesson")}
                 </motion.button>
 
                 <motion.button
@@ -71,7 +75,7 @@ const Home = () => {
                   }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Learn More
+                  {t("home.learnMore")}
                 </motion.button>
               </motion.div>
             </Col>
@@ -80,17 +84,13 @@ const Home = () => {
       </Row>
       <div className="bg-black h-2"></div>
       <AboutSection />
-
       <OurPrograms />
-
       <WhyChoose />
-
       <Coach />
       <div className="bg-black h-2"></div>
       <Testimonials />
       <div className="bg-black h-2"></div>
       <Location />
-
       <Registration />
     </>
   );

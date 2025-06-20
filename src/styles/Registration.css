@@ -26,7 +26,6 @@
   box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
 }
 
-
 .registration-btn {
   all: unset;
   cursor: pointer;
@@ -45,7 +44,6 @@
 .registration-btn:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
-
 
 .registration-steps {
   display: flex;
@@ -69,4 +67,11 @@
 .registration-steps li::marker {
   color: #ffffff;
   font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .registration-steps {
+    flex-direction: column;
+    text-align: left;
+  }
 }

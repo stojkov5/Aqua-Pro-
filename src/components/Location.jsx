@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Row, Col } from "antd";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import "../styles/Location.css";
 
 const containerVariants = {
@@ -26,6 +27,8 @@ const itemVariants = {
 };
 
 const Location = () => {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       className="location-section py-10"
@@ -41,7 +44,7 @@ const Location = () => {
             className="location-title montserrat-700"
             variants={itemVariants}
           >
-            Flexible Schedule. Central Location.
+            {t("location.title")}
           </motion.h1>
 
           {/* Subheadline */}
@@ -49,7 +52,7 @@ const Location = () => {
             className="location-subtitle montserrat-300"
             variants={itemVariants}
           >
-            Visit us at the Skopje Sports Center
+            {t("location.subtitle")}
           </motion.p>
 
           {/* Map Embed */}
@@ -60,11 +63,10 @@ const Location = () => {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2096.2467819128306!2d21.40246110609218!3d42.010133312144674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1354145da25f9897%3A0xe52281f5c1e82031!2sSwimming%20center%20Boris%20Trajkovski!5e0!3m2!1sen!2smk!4v1750246992957!5m2!1sen!2smk"
               className="location-map"
-              allowfullscreen
+              allowFullScreen
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
-           
           </motion.div>
 
           {/* Buttons */}
@@ -80,7 +82,7 @@ const Location = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              See Schedule
+              {t("location.scheduleBtn")}
             </motion.button>
 
             <motion.button
@@ -91,7 +93,7 @@ const Location = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              Book Now
+              {t("location.bookBtn")}
             </motion.button>
           </motion.div>
         </Col>

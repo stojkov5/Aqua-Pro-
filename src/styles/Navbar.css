@@ -10,6 +10,7 @@
   font-size: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem);
   transition: background 0.3s ease;
   cursor: pointer;
+  min-width: 130px;
 }
 
 .nav-link:hover {
@@ -85,6 +86,7 @@
 }
 .mobile-menu nav a {
   color: #ffffff !important;
+  min-width: 190px
 }
 
 .water-fill {
@@ -122,6 +124,9 @@
 .dropdown-menu {
   display: flex;
   flex-direction: column;
-  
+
   z-index: 50;
+}
+.lang-button.active-lang {
+  background-color: rgba(255, 255, 255, 0.2);
 }

@@ -2,7 +2,9 @@
 import { motion } from "framer-motion";
 import { Row, Col } from "antd";
 import { Link } from "react-router";
+import { useTranslation } from "react-i18next"; // ✅ Import i18n
 import "../styles/Home.css";
+
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -27,6 +29,8 @@ const itemVariants = {
 };
 
 const AboutSection = () => {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       className="about-section my-10 relative"
@@ -42,22 +46,16 @@ const AboutSection = () => {
             className="home-title montserrat-700"
             variants={itemVariants}
           >
-            Who We Are
+            {t("aboutSection.title")}
           </motion.h1>
 
           {/* Paragraph */}
           <motion.div variants={itemVariants}>
             <p className="montserrat-300 mt-4">
-              Aqua Pro International Swimming Academy is Skopje's premier swim
-              training center, offering world-class instruction in a safe,
-              structured, and motivating environment. With internationally
-              certified coaches and personalized programs, we help swimmers of
-              all ages unlock their full potential – whether it’s their first
-              splash or the road to competition.
+              {t("aboutSection.description")}
             </p>
           </motion.div>
 
-          {/* Bottom-Right Animated Arrow */}
           {/* CTA link */}
           <motion.div
             className="absolute bottom-2 right-2"
@@ -66,10 +64,10 @@ const AboutSection = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Link
-              to="/team"
+              to="/about"
               className="meet-team-btn flex items-center gap-2 justify-center"
             >
-              <small className="montserrat-300">Read More</small>
+              <small className="montserrat-300">{t("aboutSection.readMore")}</small>
               <svg
                 className="w-6 h-6 text-white"
                 fill="none"

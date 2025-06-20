@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Row, Col } from "antd";
 import "../styles/WhyChoose.css";
+import { useTranslation } from "react-i18next";
 import { CiBookmarkCheck } from "react-icons/ci";
 import { PiChalkboardTeacher, PiPersonSimpleSwim } from "react-icons/pi";
 import { GiProgression } from "react-icons/gi";
@@ -29,29 +30,10 @@ const itemVariants = {
   },
 };
 
-// Data
-const features = [
-  { icon: <CiBookmarkCheck size={36} />, label: "International Standards" },
-  {
-    icon: <PiChalkboardTeacher size={36} />,
-    label: "Certified, Experienced Coaches",
-  },
-  { icon: <GiProgression size={36} />, label: "Progress Tracking & Feedback" },
-  {
-    icon: <PiPersonSimpleSwim size={36} />,
-    label: "Modern Facilities in Skopje",
-  },
-  {
-    icon: <MdOutlineHealthAndSafety size={36} />,
-    label: "Focus on Safety and Enjoyment",
-  },
-  {
-    icon: <MdLanguage size={36} />,
-    label: "Multilingual Staff (Macedonian, English, etc.)",
-  },
-];
-
 const WhyChoose = () => {
+  const { t } = useTranslation();
+  const features = t("whyChoose.features", { returnObjects: true });
+
   return (
     <motion.div
       className="why-section py-10"
@@ -67,7 +49,7 @@ const WhyChoose = () => {
             className="why-title montserrat-700"
             variants={itemVariants}
           >
-            What Makes Us Different?
+            {t("whyChoose.title")}
           </motion.h1>
 
           {/* Subheadline */}
@@ -75,30 +57,49 @@ const WhyChoose = () => {
             className="why-subtitle montserrat-300"
             variants={itemVariants}
           >
-            Why Choose Aqua Pro?
+            {t("whyChoose.subtitle")}
           </motion.p>
 
           {/* Feature cards */}
           <Row gutter={[16, 16]} justify="center">
-            {features.map((item, index) => (
-              <Col
-                key={index}
-                xs={24}
-                sm={12}
-                md={8}
-                className="flex justify-center"
-              >
-                <motion.div variants={itemVariants} className="why-item bg-white/10 backdrop-blur-md text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full w-full">
-                  <div className="why-icon">{item.icon}</div>
-                  <div className="why-label montserrat-500">{item.label}</div>
-                </motion.div>
-              </Col>
-            ))}
+            {features.map((item, index) => {
+              const IconComponent = getIconByKey(item.icon);
+              return (
+                <Col
+                  key={index}
+                  xs={24}
+                  sm={12}
+                  md={8}
+                  className="flex justify-center"
+                >
+                  <motion.div
+                    variants={itemVariants}
+                    className="why-item bg-white/10 backdrop-blur-md text-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full w-full"
+                  >
+                    <div className="why-icon">{IconComponent}</div>
+                    <div className="why-label montserrat-500">{item.label}</div>
+                  </motion.div>
+                </Col>
+              );
+            })}
           </Row>
         </Col>
       </Row>
     </motion.div>
   );
+};
+
+// Helper to return correct icon based on key
+const getIconByKey = (key) => {
+  const icons = {
+    bookmark: <CiBookmarkCheck size={36} />,
+    coach: <PiChalkboardTeacher size={36} />,
+    progress: <GiProgression size={36} />,
+    facility: <PiPersonSimpleSwim size={36} />,
+    safety: <MdOutlineHealthAndSafety size={36} />,
+    language: <MdLanguage size={36} />,
+  };
+  return icons[key] || null;
 };
 
 export default WhyChoose;

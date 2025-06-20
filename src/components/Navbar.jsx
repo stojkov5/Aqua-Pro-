@@ -3,12 +3,14 @@ import { useLocation, useNavigate } from "react-router";
 import { MenuOutlined } from "@ant-design/icons";
 import { Button, Row, Col } from "antd";
 import { useMediaQuery } from "react-responsive";
+import { useTranslation } from "react-i18next"; // ✅ Import hook
+import LanguageSwitcher from "../components/LanguageSwithcer";
 import "../styles/Navbar.css";
 
 const navLinks = [
   { to: "/", label: "HOME" },
   { to: "/about", label: "ABOUT" },
-  { to: "/coaches", label: "COACHES" },
+  { to: "/team", label: "COACHES" },
   { to: "/programs", label: "PROGRAMS" },
 ];
 
@@ -21,7 +23,7 @@ export default function Navbar() {
 
   const location = useLocation();
   const navigate = useNavigate();
-
+  const { t } = useTranslation(); // ✅ useTranslation hook
   const dropdownTimeoutRef = useRef(null);
 
   const handleMouseMove = (e, index) => {
@@ -46,7 +48,7 @@ export default function Navbar() {
   const handleDropdownLeave = () => {
     dropdownTimeoutRef.current = setTimeout(() => {
       setDropdownOpen(false);
-    }, 200); // 200ms delay to allow hover transition
+    }, 200);
   };
 
   return (
@@ -78,7 +80,7 @@ export default function Navbar() {
                       onMouseLeave={() => setHoveredIndex(null)}
                       className={`nav-link relative ${isActive ? "active" : ""}`}
                     >
-                      <span className="relative z-10">{label}</span>
+                      <span className="relative z-10">{t(label)}</span>
                       {(hoveredIndex === index || isActive) && (
                         <span
                           className="splash"
@@ -91,7 +93,6 @@ export default function Navbar() {
                       <span className="wave-underline" />
                     </button>
 
-                    {/* Dropdown under ABOUT */}
                     {isAbout && dropdownOpen && (
                       <div
                         className="dropdown-menu absolute top-full mt-2 left-0"
@@ -106,7 +107,7 @@ export default function Navbar() {
                             location.pathname === "/levels" ? "active" : ""
                           }`}
                         >
-                          <span className="relative z-10">LEVELS</span>
+                          <span className="relative z-10">{t("LEVELS")}</span>
                           {hoveredIndex === 999 && (
                             <span
                               className="splash"
@@ -126,36 +127,16 @@ export default function Navbar() {
             </nav>
           )}
 
-          {/* Language Buttons / Hamburger */}
+          {/* Language Switcher or Mobile Menu Icon */}
           <div className="z-10">
             {!isMobile ? (
               <div className="flex items-center gap-2">
-                {["EN", "MK"].map((lang, i) => (
-                  <button
-                    key={lang}
-                    className="lang-button"
-                    onMouseMove={(e) => handleMouseMove(e, i + 100)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                  >
-                    <span className="relative z-10">{lang}</span>
-                    {hoveredIndex === i + 100 && (
-                      <span
-                        className="splash"
-                        style={{
-                          top: hoverXY.y - 64,
-                          left: hoverXY.x - 64,
-                        }}
-                      />
-                    )}
-                  </button>
-                ))}
+                <LanguageSwitcher />
               </div>
             ) : (
               <Button
                 type="text"
-                icon={
-                  <MenuOutlined style={{ fontSize: "24px", color: "white" }} />
-                }
+                icon={<MenuOutlined style={{ fontSize: "24px", color: "white" }} />}
                 onClick={() => setMenuOpen(!menuOpen)}
               />
             )}
@@ -175,10 +156,11 @@ export default function Navbar() {
                   }}
                   className="nav-link text-lg"
                 >
-                  {label}
+                  {t(label)}
                 </button>
               ))}
-              {/* Levels in Mobile */}
+
+              {/* Levels link under ABOUT for mobile */}
               <button
                 onClick={() => {
                   setMenuOpen(false);
@@ -186,17 +168,15 @@ export default function Navbar() {
                 }}
                 className="nav-link text-lg"
               >
-                LEVELS
+                {t("LEVELS")}
               </button>
 
+              {/* Language Switcher in mobile */}
               <div className="flex gap-6">
-                {["EN", "MK"].map((lang) => (
-                  <button key={lang} className="text-lg">
-                    {lang}
-                  </button>
-                ))}
+                <LanguageSwitcher />
               </div>
             </div>
+
             <button
               onClick={() => setMenuOpen(false)}
               className="absolute top-4 right-6 text-white text-2xl"

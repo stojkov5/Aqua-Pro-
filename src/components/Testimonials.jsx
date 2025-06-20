@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { Carousel, Row, Col } from "antd";
+import { useTranslation } from "react-i18next";
 import "../styles/Testimonials.css";
 
 const containerVariants = {
@@ -25,13 +26,11 @@ const itemVariants = {
   },
 };
 
-const testimonials = [
-  "My son went from afraid of the water to swimming laps in weeks!",
-  "Professional, friendly, and motivating coaches.",
-  "The best swim academy in Skopje – hands down.",
-];
-
 const Testimonials = () => {
+  const { t } = useTranslation();
+
+  const testimonials = t("testimonials.quotes", { returnObjects: true });
+
   return (
     <motion.div
       className="testimonials-section py-10"
@@ -47,7 +46,7 @@ const Testimonials = () => {
             className="testimonials-title montserrat-700"
             variants={itemVariants}
           >
-            What Parents and Swimmers Say
+            {t("testimonials.title")}
           </motion.h1>
 
           {/* Carousel */}

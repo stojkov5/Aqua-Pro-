@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { Row, Col } from "antd";
-import { Link } from "react-router"; // ✅ Corrected router import
-import "../styles/OurPrograms.css"; // ✅ New custom CSS
+import { Link } from "react-router";
+import { useTranslation } from "react-i18next"; // ✅ i18n translation
+import "../styles/OurPrograms.css";
 
 // Animation variants
 const containerVariants = {
@@ -27,33 +28,11 @@ const itemVariants = {
   },
 };
 
-// Program data
-const programs = [
-  {
-    title: "Learn to Swim (Ages 3+)",
-    description: "Building water confidence through structured play.",
-  },
-  {
-    title: "Stroke Development (Juniors & Teens)",
-    description: "Focused technique improvement for young swimmers.",
-  },
-  {
-    title: "Competitive Swim Training",
-    description:
-      "For athletes aiming for performance and national/international events.",
-  },
-  {
-    title: "Adult Swimming",
-    description:
-      "Whether learning to swim or refining technique, it’s never too late.",
-  },
-  {
-    title: "Private Lessons",
-    description: "One-on-one coaching for rapid progress.",
-  },
-];
-
 const OurPrograms = () => {
+  const { t } = useTranslation();
+
+  const programs = t("ourPrograms.programs", { returnObjects: true });
+
   return (
     <motion.div
       className="programs-section my-10 relative"
@@ -69,7 +48,7 @@ const OurPrograms = () => {
             className="programs-title montserrat-700"
             variants={itemVariants}
           >
-            Programs for Every Level
+            {t("ourPrograms.title")}
           </motion.h1>
 
           {/* Subheadline */}
@@ -77,7 +56,7 @@ const OurPrograms = () => {
             className="programs-subtitle montserrat-300"
             variants={itemVariants}
           >
-            Tailored swim lessons for every stage of the journey.
+            {t("ourPrograms.subtitle")}
           </motion.p>
 
           {/* Cards */}
@@ -105,8 +84,7 @@ const OurPrograms = () => {
             ))}
           </Row>
 
-          {/* Bottom-Right Arrow */}
-          {/* CTA link */}
+          {/* CTA */}
           <motion.div
             className="absolute bottom-2 right-2"
             variants={itemVariants}
@@ -117,7 +95,7 @@ const OurPrograms = () => {
               to="/team"
               className="meet-team-btn flex items-center gap-2 justify-center"
             >
-              <small className="montserrat-300">View Full Schedule</small>
+              <small className="montserrat-300">{t("ourPrograms.cta")}</small>
               <svg
                 className="w-6 h-6 text-white"
                 fill="none"

@@ -1,13 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { Row, Col } from "antd";
 import { motion } from "framer-motion";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import "../styles/Footer.css";
+import LanguageSwitcher from "../components/LanguageSwithcer";
 
 const Footer = () => {
   return (
@@ -32,10 +28,18 @@ const Footer = () => {
           <Col xs={24} sm={12} md={6} className="footer-content">
             <h3 className="footer-title">Quick Links</h3>
             <ul className="footer-links">
-              <li><a href="/programs">Programs</a></li>
-              <li><a href="/coaches">Coaches</a></li>
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li>
+                <a href="/programs">Programs</a>
+              </li>
+              <li>
+                <a href="/coaches">Coaches</a>
+              </li>
+              <li>
+                <a href="/faq">FAQ</a>
+              </li>
+              <li>
+                <a href="/contact">Contact</a>
+              </li>
             </ul>
           </Col>
 
@@ -55,24 +59,31 @@ const Footer = () => {
           <Col xs={24} sm={12} md={6} className="footer-content">
             <h3 className="footer-title">Follow Us</h3>
             <div className="footer-socials">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaInstagram /></a>
-              <a href="#"><FaYoutube /></a>
-              <a href="#"><FaTwitter /></a>
+              <a href="#">
+                <FaFacebookF />
+              </a>
+              <a href="#">
+                <FaInstagram />
+              </a>
+              <a href="#">
+                <FaYoutube />
+              </a>
+              <a href="#">
+                <FaTwitter />
+              </a>
             </div>
             <div className="language-switcher">
-              <label htmlFor="lang">Language:</label>
-              <select id="lang" name="language">
-                <option value="mk">MK</option>
-                <option value="en">EN</option>
-              </select>
+              <LanguageSwitcher />
             </div>
           </Col>
         </Row>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Aqua Pro Swim Academy. All rights reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} Aqua Pro Swim Academy. All rights
+          reserved.
+        </p>
       </div>
     </motion.footer>
   );

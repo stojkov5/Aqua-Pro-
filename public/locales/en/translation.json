@@ -1,0 +1,172 @@
+{
+  "HOME": "HOME",
+  "ABOUT": "ABOUT",
+  "COACHES": "COACHES",
+  "PROGRAMS": "PROGRAMS",
+  "LEVELS": "LEVELS",
+  "home": {
+    "title": "Dive into Excellence. Swim with Confidence.",
+    "subtitle": "World-class swim training for all ages – right here in Skopje.",
+    "bookLesson": "Book A Trial Lesson",
+    "learnMore": "Learn More"
+  },
+  "aboutSection": {
+    "title": "Who We Are",
+    "description": "Aqua Pro International Swimming Academy is Skopje's premier swim training center, offering world-class instruction in a safe, structured, and motivating environment. With internationally certified coaches and personalized programs, we help swimmers of all ages unlock their full potential – whether it’s their first splash or the road to competition.",
+    "readMore": "Read More"
+  },
+  "ourPrograms": {
+    "title": "Programs for Every Level",
+    "subtitle": "Tailored swim lessons for every stage of the journey.",
+    "cta": "View Full Schedule",
+    "programs": [
+      {
+        "title": "Learn to Swim (Ages 3+)",
+        "description": "Building water confidence through structured play."
+      },
+      {
+        "title": "Stroke Development (Juniors & Teens)",
+        "description": "Focused technique improvement for young swimmers."
+      },
+      {
+        "title": "Competitive Swim Training",
+        "description": "For athletes aiming for performance and national/international events."
+      },
+      {
+        "title": "Adult Swimming",
+        "description": "Whether learning to swim or refining technique, it’s never too late."
+      },
+      {
+        "title": "Private Lessons",
+        "description": "One-on-one coaching for rapid progress."
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "What Makes Us Different?",
+    "subtitle": "Why Choose Aqua Pro?",
+    "features": [
+      {
+        "icon": "bookmark",
+        "label": "International Standards"
+      },
+      {
+        "icon": "coach",
+        "label": "Certified, Experienced Coaches"
+      },
+      {
+        "icon": "progress",
+        "label": "Progress Tracking & Feedback"
+      },
+      {
+        "icon": "facility",
+        "label": "Modern Facilities in Skopje"
+      },
+      {
+        "icon": "safety",
+        "label": "Focus on Safety and Enjoyment"
+      },
+      {
+        "icon": "language",
+        "label": "Multilingual Staff (Macedonian, English, etc.)"
+      }
+    ]
+  },
+  "coach": {
+    "title": "Our Team of Professionals",
+    "subtitle": "Our coaches are certified by international swim bodies and bring years of experience teaching swimmers of all ages and abilities.",
+    "cta": "Meet the Team"
+  },
+  "testimonials": {
+    "title": "What Parents and Swimmers Say",
+    "quotes": [
+      "My son went from afraid of the water to swimming laps in weeks!",
+      "Professional, friendly, and motivating coaches.",
+      "The best swim academy in Skopje – hands down."
+    ]
+  },
+  "location": {
+    "title": "Flexible Schedule. Central Location.",
+    "subtitle": "Visit us at the Skopje Sports Center",
+    "scheduleBtn": "See Schedule",
+    "bookBtn": "Book Now"
+  },
+  "registration": {
+    "title": "Get Started Today",
+    "steps": [
+      "Choose your program",
+      "Book a free trial",
+      "Join the Aqua Pro family"
+    ],
+    "plans": [
+      {
+        "title": "Monthly Plan",
+        "price": "€60 / month",
+        "details": "Includes 2 sessions per week."
+      },
+      {
+        "title": "Private Lessons",
+        "price": "€35 / session",
+        "details": "One-on-one coaching, flexible scheduling."
+      },
+      {
+        "title": "Family Package",
+        "price": "€160 / month",
+        "details": "Covers up to 3 family members, 2 sessions/week each."
+      }
+    ],
+    "cta": "Register Now"
+  },
+  "about": {
+    "title": "Recognisable for elite organisation, professional work by the coaches, healthy swimmers, and happy parents",
+    "visionTitle": "VISION",
+    "visionText": "Swimming club AQUA PRO – ACADEMY Martin Stefanovski, through a professional coaching program, to enable every swimmer to gradually and in a healthy way develop their swimming skills to the limit of their capabilities. To be a club from which top and quality swimmers will emerge, representatives who will represent the country in major European and world competitions. Let's advocate for the introduction of swimming in primary schools as a compulsory sport, and the promotion of lifelong swimming as an integral part of modern and cultural living.",
+    "missionTitle": "MISSION",
+    "missionText": "Our mission is for every child to develop swimming skills from a young age, to raise the quality of sports swimming to the highest level, to increase the mass of swimming in Skopje and beyond, and to run the club in a modern and high-quality way. Our club should be recognised for top organisation, professional work of trainers, healthy swimmers and satisfied parents.",
+    "goalsTitle": "GOALS AND OBJECTIVES",
+    "goalsList": [
+      "training of non-swimmers and swimmers;",
+      "encouraging physical health;",
+      "application of swimming in preventive therapeutic and rehabilitation purposes;",
+      "development and availability of swimming aids;",
+      "promoting the sport of swimming in R.M."
+    ]
+  },
+  "coaches": {
+    "title": "MEET THE COACHES",
+    "intro": "Our coaching staff consists of professionals with many years of experience both in and out of the swimming pool. Professors of physical education, Masters of sports management, physiotherapists, former and current national champions and record holders — they are all helping your children learn the sport we all love in the best way possible.",
+    "readMore": "Read More",
+    "data": [
+      {
+        "id": 1,
+        "name": "Martin Stefanovski",
+        "image": "/Coaches/Martin-S.webp",
+        "about": "Martin Stefanovski Master's Degree in Sports Management. Professional swimmer, multinational record holder, participant and medallist in numerous major international competitions of European and world character. In 2007, he became a member of the national swimming team, participating in the Balkan Games in Athens. Through his international experience as a swimmer, he took part in the World University Games in Shenzhen - China (2011), Gwangju - Korea (2015), and Taipei - Taiwan (2017) as a coach of the national team."
+      },
+      {
+        "id": 2,
+        "name": "Sotir Trajkovski- Coci",
+        "image": "/Coaches/Coci.webp",
+        "about": "Graduated Economist. National representative and record holder, participant and medalist in international competitions, youngest swimmer to complete the Ohrid Marathon. Has 10 years of experience as a coach, with many successful students and international competitors."
+      },
+      {
+        "id": 3,
+        "name": "Jovan Vaklinski",
+        "image": "/Coaches/Jovan.webp",
+        "about": "Graduated physiotherapist. Has extensive coaching experience and a background in aquatics. Former player for Macedonia's National Waterpolo Team. Participated in therapeutic swimming and hydro kinesiotherapy projects."
+      },
+      {
+        "id": 4,
+        "name": "Stefan Stefanovski",
+        "image": "/Coaches/Stefan.webp",
+        "about": "Graduated physiotherapist. Many years of swimming experience, multiple-time national champion and former record holder, with outstanding results in both national and international competitions."
+      },
+      {
+        "id": 5,
+        "name": "Vesna Trajkovska Sterjov",
+        "image": "/Coaches/Vesna.webp",
+        "about": "Graduated professor of physical culture. Member of the national team of Macedonia with appearances in numerous competitions including Balkan Games, European and World Youth Championships. Current National Record Holder. Competed at the Ohrid Marathon 4 times. 15 years of experience as a swimming coach."
+      }
+    ]
+  }
+}

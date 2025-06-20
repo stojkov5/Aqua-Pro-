@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Row, Col } from "antd";
 import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
 import "../styles/Coach.css";
 
 const containerVariants = {
@@ -27,6 +28,8 @@ const itemVariants = {
 };
 
 const Coach = () => {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       className="coach-section my-10"
@@ -42,7 +45,7 @@ const Coach = () => {
             className="coach-title montserrat-700"
             variants={itemVariants}
           >
-            Our Team of Professionals
+            {t("coach.title")}
           </motion.h1>
 
           {/* Subheadline */}
@@ -50,8 +53,7 @@ const Coach = () => {
             className="coach-subtitle montserrat-300"
             variants={itemVariants}
           >
-            Our coaches are certified by international swim bodies and bring
-            years of experience teaching swimmers of all ages and abilities.
+            {t("coach.subtitle")}
           </motion.p>
 
           {/* CTA link */}
@@ -65,7 +67,7 @@ const Coach = () => {
               to="/team"
               className="meet-team-btn flex items-center gap-2 justify-center"
             >
-              <small className="montserrat-300">Meet the Team</small>
+              <small className="montserrat-300">{t("coach.cta")}</small>
               <svg
                 className="w-6 h-6 text-white"
                 fill="none"
