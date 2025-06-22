@@ -168,5 +168,120 @@
         "about": "Graduated professor of physical culture. Member of the national team of Macedonia with appearances in numerous competitions including Balkan Games, European and World Youth Championships. Current National Record Holder. Competed at the Ohrid Marathon 4 times. 15 years of experience as a swimming coach."
       }
     ]
+  },
+  "levels": {
+    "title": "Swimming Levels",
+    "modal": {
+      "focus": "Focus",
+      "goals": "Goals"
+    },
+    "data": [
+      {
+        "id": 1,
+        "name": "Level 1",
+        "age": "4-6 years",
+        "focus": "COMFORT",
+        "logo": "/Levels/lvl1.webp",
+        "description": "This beginner level builds a foundation to help children feel comfortable with basic swimming skills.",
+        "goals": "Overcome fear, proper breath control, comfort with submersion, independence floating on front and back, wall push-offs, back float safety position, and basic backstroke."
+      },
+      {
+        "id": 2,
+        "name": "Level 2",
+        "age": "5-7 years",
+        "focus": "CONTROL",
+        "logo": "/Levels/lvl2.webp",
+        "description": "This advanced beginner level helps swimmers control their breathing while swimming.",
+        "goals": "Proper movement in water using basic freestyle and backstroke techniques and breath control."
+      },
+      {
+        "id": 3,
+        "name": "Level 3",
+        "age": "6-8 years",
+        "focus": "INDEPENDENCE",
+        "logo": "/Levels/lvl3.webp",
+        "description": "Teaches swimmers breath control and efficient swimming to gain independence in water.",
+        "goals": "Mastering freestyle and backstroke technique, side breathing, and intro to breaststroke."
+      },
+      {
+        "id": 4,
+        "name": "Level 4",
+        "age": "7-9 years",
+        "focus": "RHYTHM",
+        "logo": "/Levels/lvl4.webp",
+        "description": "Helps swimmers develop effective coordination of arms, legs, breathing, and body position.",
+        "goals": "Rhythmic freestyle, improved backstroke, breaststroke timing, and water feel drills."
+      },
+      {
+        "id": 5,
+        "name": "Level 5",
+        "age": "8-10 years",
+        "focus": "TECHNIQUE",
+        "logo": "/Levels/lvl5.webp",
+        "description": "Helps students refine underwater skills in freestyle, backstroke, sidestroke, and butterfly.",
+        "goals": "Demonstrate freestyle with rhythmic breathing, backstroke, breaststroke, treading water, sidestroke, and butterfly basics."
+      },
+      {
+        "id": 6,
+        "name": "Level 6",
+        "age": "9+ years",
+        "focus": "ENDURANCE",
+        "logo": "/Levels/lvl6.webp",
+        "description": "Advanced group focuses on strengthening strokes and building endurance.",
+        "goals": "Swim longer distances in all strokes with ease and learn flip turns."
+      }
+    ]
+  },
+  "programs": {
+    "title": "2024 Aqua Pro Swim Meet",
+    "eventInfo": "Event Info",
+    "pool": "25m pool • 8 lanes • Electronic timing",
+    "temp": "Water Temp: 26.5 °C",
+    "entryFee": "Entry Fee: 350 MKD / 6€ per event",
+    "deadline": "Deadline: 20 Dec 2024 at 23:59",
+    "rules": "Rules: WA, LEN, National Federation",
+    "download": "Download Official Cup PDF",
+    "locationContact": "Location & Contact",
+    "location": "📍 A1 Arena Boris Trajkovski",
+    "categoriesTitle": "Categories",
+    "categories": [
+      { "label": "A", "description": "Absolute" },
+      { "label": "B", "description": "2009-2010" },
+      { "label": "C", "description": "2011-2012" },
+      { "label": "D", "description": "2013-2014" },
+      { "label": "E", "description": "2015-2016" },
+      { "label": "F", "description": "2017 & younger" }
+    ],
+    "events": "Events",
+    "eventsList": [
+      "100m Freestyle",
+      "50m Breaststroke",
+      "100m Backstroke",
+      "50m Freestyle",
+      "100m IM",
+      "100m Butterfly",
+      "50m Backstroke",
+      "100m Breaststroke",
+      "50m Butterfly",
+      "200m Freestyle"
+    ],
+    "schedule": "Schedule",
+    "warmup": "Warm-Up: 13:00",
+    "raceStart": "Race Start: 14:00",
+    "medals": "Talent Cup Medals",
+    "medalRounds": [
+      "100m Freestyle / 50m Breaststroke",
+      "100m Backstroke / 50m Freestyle",
+      "100m IM / 50m Butterfly",
+      "50m Backstroke / 100m Breaststroke",
+      "50m Butterfly / 200m Freestyle"
+    ],
+    "awards": "Awards",
+    "award1": "🏅 Top 3 competitors in each individual event will receive medals.",
+    "award2": "🏆 The best 3 results by FINA points in categories A–F will earn a Cup (Men & Women).",
+    "award3": "🆓 Unlimited event participation per swimmer.",
+    "award4": "💶 Best Male & Female in Category A scoring over 1600 FINA 2025 points in two events will receive €300.",
+    "health": "Health Disclaimer",
+    "healthText": "Each swimming club is responsible for the health condition of its swimmers."
   }
 }

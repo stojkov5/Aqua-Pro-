@@ -1,0 +1,85 @@
+.levels-wrapper {
+  background-color: rgba(0, 124, 247, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.levels-title {
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.level-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  min-height: 220px;
+  transition: transform 0.3s ease;
+}
+
+.level-card:hover {
+  transform: scale(1.03);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.level-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* .level-name {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  margin-bottom: 0.5rem;
+  color: #f0f0f0;
+  font-weight: 600;
+} */
+.level-focus {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  margin-bottom: 0.5rem;
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+.level-age {
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  color: #e0e0e0;
+}
+
+.levels-modal .ant-modal-content {
+  border-radius: 1rem;
+  background-color: rgba(0, 124, 247, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  color: #dcdcdc;
+}
+
+.modal-title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.modal-focus {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-style: italic;
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.modal-text {
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
