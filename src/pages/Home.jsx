@@ -10,7 +10,7 @@ import Coach from "../components/Coach";
 import Testimonials from "../components/Testimonials";
 import Location from "../components/Location";
 import Registration from "../components/Registration";
-
+import { Link } from "react-router";
 const textVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i) => ({
@@ -67,16 +67,18 @@ const Home = () => {
                   {t("home.bookLesson")}
                 </motion.button>
 
-                <motion.button
-                  className="landing-btn montserrat-300 "
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 0 12px rgba(255,255,255,0.2)",
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {t("home.learnMore")}
-                </motion.button>
+               <Link to="/about">
+                  <motion.button
+                    className="landing-btn montserrat-300"
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 0 12px rgba(255,255,255,0.2)",
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {t("home.learnMore")}
+                  </motion.button>
+                </Link>
               </motion.div>
             </Col>
           </Row>

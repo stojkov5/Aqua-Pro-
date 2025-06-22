@@ -32,10 +32,10 @@ const Footer = () => {
                 <a href="/programs">Programs</a>
               </li>
               <li>
-                <a href="/coaches">Coaches</a>
+                <a href="/team">Coaches</a>
               </li>
               <li>
-                <a href="/faq">FAQ</a>
+                <a href="/PrivacyPolicy.pdf" target="_blank">FAQ</a>
               </li>
               <li>
                 <a href="/contact">Contact</a>
@@ -59,18 +59,16 @@ const Footer = () => {
           <Col xs={24} sm={12} md={6} className="footer-content">
             <h3 className="footer-title">Follow Us</h3>
             <div className="footer-socials">
-              <a href="#">
+              <a href="https://www.facebook.com/AquaProSwimming/?ref=_xav_ig_profile_page_web_0515#" target="_blank">
                 <FaFacebookF />
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/aquaproswimming/"target="_blank">
                 <FaInstagram />
               </a>
-              <a href="#">
+              <a href="https://www.youtube.com/@aquaproswimmingacademy5793" target="_blank">
                 <FaYoutube />
               </a>
-              <a href="#">
-                <FaTwitter />
-              </a>
+              
             </div>
             <div className="language-switcher">
               <LanguageSwitcher />
