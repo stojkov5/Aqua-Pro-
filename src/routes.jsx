@@ -5,6 +5,8 @@ import About from "../src/pages/About";
 import Programs from "../src/pages/Programs";
 import Coaches from "../src/pages/Coaches";
 import Levels from "../src/pages/Levels";
+import Schedule from "../src/components/Schedule";
+import CompetitionSquad from "../src/components/CompetitionSquad";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +28,14 @@ const routes = createBrowserRouter([
       {
         path: "/team",
         element: <Coaches />,
+      },
+      {
+        path: "/schedule",
+        element: <Schedule />,
+      },
+      {
+        path: "/squad",
+        element: <CompetitionSquad />,
       },
     ],
   },

@@ -1,9 +1,12 @@
 {
   "HOME": "HOME",
   "ABOUT": "ABOUT",
-  "COACHES": "COACHES",
-  "PROGRAMS": "PROGRAMS",
   "LEVELS": "LEVELS",
+  "COACHES": "COACHES",
+  "SCHEDULE": "SCHEDULE",
+  "COMPETITION SQUAD": "COMPETITION SQUAD",
+  "COMPETITIONS": "COMPETITIONS",
+  "TEAM SHOP": "TEAM SHOP",
   "home": {
     "title": "Dive into Excellence. Swim with Confidence.",
     "subtitle": "World-class swim training for all ages – right here in Skopje.",
@@ -233,7 +236,7 @@
     ]
   },
   "programs": {
-    "title": "2024 Aqua Pro Swim Meet",
+    "title": "Aqua Pro Talent Cup ",
     "eventInfo": "Event Info",
     "pool": "25m pool • 8 lanes • Electronic timing",
     "temp": "Water Temp: 26.5 °C",
@@ -283,5 +286,64 @@
     "award4": "💶 Best Male & Female in Category A scoring over 1600 FINA 2025 points in two events will receive €300.",
     "health": "Health Disclaimer",
     "healthText": "Each swimming club is responsible for the health condition of its swimmers."
+  },
+  "schedule": {
+    "title": "Training Schedule",
+    "days": {
+      "time": "Time",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "smallPool": "(small pool)",
+    "bigSmallPool": "(big + small pool)",
+    "roster": "Roster",
+    "aquaAerobic": "Aqua Aerobic",
+
+    "rosterLevels": "Roster Levels",
+    "ageGroups": "Age Groups - Swimming Level",
+    "sessionPerWeek": "Session Per Week",
+    "ageGroupsShort": "Age Groups",
+    "teamManagement": "Team Management",
+
+    "rosters": {
+      "1": "4–6+ yo – Fundamentals",
+      "2": "7–9; 10–12; 13–15+ – Learn to swim / Training to train",
+      "3": "10–12; 13–15; 16+ – Competition Squad",
+      "4": "Masters",
+      "aqua": "Adults"
+    },
+
+    "sessions": {
+      "header": ["4–6+", "7–9", "10–12", "13–15+", "16+"],
+      "r1": ["2", "", "", "", ""],
+      "r2": ["", "2", "3", "3", ""],
+      "r3": ["", "", "4", "4", "5"]
+    },
+
+    "team": [
+      { "first": "M-r Martin", "last": "Stefanovski" },
+      { "first": "Vesna", "last": "Trajkovska" },
+      { "first": "Sotir - Coci", "last": "Trajkovski" },
+      { "first": "Stefan", "last": "Stefanovski" },
+      { "first": "Jovan", "last": "Vaklinski" },
+      { "first": "Ilija", "last": "Stojanovski" },
+      { "first": "Prof. Natasha", "last": "Meshkovska" }
+    ]
+  },
+  "competitionSquad": {
+    "title": "COMPETITION SQUAD",
+    "leadCoachTitle": "Lead Coach: Sotir Trajkovski - Coci",
+    "leadCoachExperience": "Has 10 years of experience as a coach, with lots of successful young swimmers and competitors on an international stage.",
+    "leadCoachAchievements": "National representative and record holder, participant and medalist in international competitions, youngest swimmer to complete the Ohrid Marathon.",
+
+    "pathwayTitle": "Competition Pathway",
+    "pathwayParagraph1": "Since its foundation, the goal of the Aqua Pro Swimming Academy has been to support the development of each swimmer to reach their true swimming potential. Over time, Aqua Pro's reputation has steadily increased. The level of our swimmers has increased not only locally, but also worldwide, now the most successful swimmers in Macedonia and the region are training in Aqua Pro.",
+    "pathwayParagraph2": "Our team structure is designed to be progressive, for swimmers to develop through levels in accordance with a long-term athlete development plan. We have four competitor levels (10-12, 13-15, 16+, Elite) which allow each swimmer to develop and train according to their correct age, ability, commitment, goals and potential. This structure allows swimmers of all abilities and dedication to enjoy the sport equally.",
+    "pathwayParagraph3": "The Competition Pathway has evolved to support swimmers who aim to train and compete. Training is carried out with an individual program, but most importantly according to the correct age and ability - this allows swimmers to choose their commitment to be in line with their goals."
   }
 }

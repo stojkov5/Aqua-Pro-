@@ -4,7 +4,8 @@ body {
   background-image: url("/Background.jpg");
   background-size: cover;
   background-repeat: repeat-y;
-  
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
   position: relative;
 }
 body::after {

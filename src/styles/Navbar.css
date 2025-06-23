@@ -82,7 +82,7 @@
 }
 
 .nav-link:hover .wave-underline {
-  transform: scaleX(1.5);
+  transform: scaleX(2);
 }
 .mobile-menu nav a {
   color: #ffffff !important;

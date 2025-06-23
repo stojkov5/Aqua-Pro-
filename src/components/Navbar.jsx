@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useRef } from "react";
 import { useLocation } from "react-router";
 import { MenuOutlined } from "@ant-design/icons";
@@ -10,9 +11,18 @@ import { NavLink } from "react-router";
 
 const navLinks = [
   { to: "/", label: "HOME" },
-  { to: "/about", label: "ABOUT" },
-  { to: "/team", label: "COACHES" },
-  { to: "/programs", label: "PROGRAMS" },
+  {
+    label: "ABOUT",
+    dropdown: true,
+    children: [
+      { to: "/levels", label: "LEVELS" },
+      { to: "/team", label: "COACHES" },
+      { to: "/schedule", label: "SCHEDULE" },
+    ],
+  },
+  { to: "/squad", label: "COMPETITION SQUAD" },
+  { to: "/programs", label: "COMPETITIONS" },
+  { to: "/shop", label: "TEAM SHOP" },
 ];
 
 export default function Navbar() {
@@ -21,10 +31,10 @@ export default function Navbar() {
   const [hoverXY, setHoverXY] = useState({ x: 0, y: 0 });
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownTimeoutRef = useRef(null);
 
   const location = useLocation();
   const { t } = useTranslation();
-  const dropdownTimeoutRef = useRef(null);
 
   const handleMouseMove = (e, index) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -50,89 +60,107 @@ export default function Navbar() {
     <Row justify="center" className="absolute w-full z-50 py-3">
       <Col span={20}>
         <div className="flex items-center justify-between w-full">
-          {/* Logo */}
           <div className="text-xl font-bold text-white z-10">
             <NavLink to="/">
               <img className="w-20" src="./Logo.png" alt="Aqua Pro Logo" />
             </NavLink>
           </div>
 
-          {/* Desktop Navigation */}
           {!isMobile && (
             <nav className="flex gap-6 text-white z-10">
-              {navLinks.map(({ to, label }, index) => {
-                const isAbout = label === "ABOUT";
-                return (
-                  <div
-                    key={to}
-                    className="relative"
-                    onMouseEnter={isAbout ? handleDropdownEnter : undefined}
-                    onMouseLeave={isAbout ? handleDropdownLeave : undefined}
-                  >
-                    <NavLink to={to}>
-                      {({ isActive }) => (
-                        <button
-                          onMouseMove={(e) => handleMouseMove(e, index)}
-                          onMouseLeave={() => setHoveredIndex(null)}
-                          className={`nav-link relative ${
-                            isActive ? "active" : ""
-                          }`}
-                        >
-                          <span className="relative z-10">{t(label)}</span>
-                          {(hoveredIndex === index || isActive) && (
-                            <span
-                              className="splash"
-                              style={{
-                                top: hoverXY.y - 64,
-                                left: hoverXY.x - 64,
-                              }}
-                            />
-                          )}
-                          <span className="wave-underline" />
-                        </button>
-                      )}
-                    </NavLink>
-
-                    {isAbout && dropdownOpen && (
-                      <div
-                        className="dropdown-menu absolute top-full mt-2 left-0"
-                        onMouseEnter={handleDropdownEnter}
-                        onMouseLeave={handleDropdownLeave}
+              {navLinks.map((item, index) => {
+                if (item.dropdown) {
+                  return (
+                    <div
+                      key={item.label}
+                      className="relative"
+                      onMouseEnter={handleDropdownEnter}
+                      onMouseLeave={handleDropdownLeave}
+                    >
+                      <button
+                        onMouseMove={(e) => handleMouseMove(e, index)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                        className="nav-link relative"
                       >
-                        <NavLink to="/levels">
-                          {({ isActive }) => (
-                            <button
-                              onMouseMove={(e) => handleMouseMove(e, 999)}
-                              onMouseLeave={() => setHoveredIndex(null)}
-                              className={`nav-link relative ${
-                                isActive ? "active" : ""
-                              }`}
-                            >
-                              <span className="relative z-10">
-                                {t("LEVELS")}
-                              </span>
-                              {hoveredIndex === 999 && (
-                                <span
-                                  className="splash"
-                                  style={{
-                                    top: hoverXY.y - 64,
-                                    left: hoverXY.x - 64,
-                                  }}
-                                />
+                        <span className="relative z-10">{t(item.label)}</span>
+                        {hoveredIndex === index && (
+                          <span
+                            className="splash"
+                            style={{
+                              top: hoverXY.y - 64,
+                              left: hoverXY.x - 64,
+                            }}
+                          />
+                        )}
+                        <span className="wave-underline" />
+                      </button>
+
+                      {dropdownOpen && (
+                        <div className="dropdown-menu absolute top-full mt-2 left-0 gap-2">
+                          {item.children.map((child, i) => (
+                            <NavLink to={child.to} key={child.to}>
+                              {({ isActive }) => (
+                                <button
+                                  onMouseMove={(e) =>
+                                    handleMouseMove(e, 999 + i)
+                                  }
+                                  onMouseLeave={() => setHoveredIndex(null)}
+                                  className={`nav-link relative ${
+                                    isActive ? "active" : ""
+                                  }`}
+                                >
+                                  <span className="relative z-10">
+                                    {t(child.label)}
+                                  </span>
+                                  {hoveredIndex === 999 + i && (
+                                    <span
+                                      className="splash"
+                                      style={{
+                                        top: hoverXY.y - 64,
+                                        left: hoverXY.x - 64,
+                                      }}
+                                    />
+                                  )}
+                                  <span className="wave-underline" />
+                                </button>
                               )}
-                              <span className="wave-underline" />
-                            </button>
-                          )}
-                        </NavLink>
-                      </div>
+                            </NavLink>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
+                return (
+                  <NavLink to={item.to} key={item.to}>
+                    {({ isActive }) => (
+                      <button
+                        onMouseMove={(e) => handleMouseMove(e, index)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                        className={`nav-link relative ${
+                          isActive ? "active" : ""
+                        }`}
+                      >
+                        <span className="relative z-10">{t(item.label)}</span>
+                        {(hoveredIndex === index || isActive) && (
+                          <span
+                            className="splash"
+                            style={{
+                              top: hoverXY.y - 64,
+                              left: hoverXY.x - 64,
+                            }}
+                          />
+                        )}
+                        <span className="wave-underline" />
+                      </button>
                     )}
-                  </div>
+                  </NavLink>
                 );
               })}
             </nav>
           )}
 
-          {/* Language Switcher or Mobile Menu Icon */}
           <div className="z-10">
             {!isMobile ? (
               <div className="flex items-center gap-2">
@@ -150,42 +178,47 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {menuOpen && isMobile && (
           <div className="mobile-menu fixed top-0 left-0 w-full h-screen backdrop-blur-xl text-white flex flex-col items-center justify-center z-50">
             <div className="flex flex-col items-center gap-6">
-              {navLinks.map(({ to, label }) => (
-                <NavLink
-                  key={to}
-                  to={to}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {({ isActive }) => (
-                    <button
-                      className={`nav-link text-lg ${
-                        isActive ? "active" : ""
-                      }`}
+              {navLinks.map((item) =>
+                item.dropdown ? (
+                  item.children.map((child) => (
+                    <NavLink
+                      key={child.to}
+                      to={child.to}
+                      onClick={() => setMenuOpen(false)}
                     >
-                      {t(label)}
-                    </button>
-                  )}
-                </NavLink>
-              ))}
-
-              {/* Levels link under ABOUT for mobile */}
-              <NavLink to="/levels" onClick={() => setMenuOpen(false)}>
-                {({ isActive }) => (
-                  <button
-                    className={`nav-link text-lg ${
-                      isActive ? "active" : ""
-                    }`}
+                      {({ isActive }) => (
+                        <button
+                          className={`nav-link text-lg ${
+                            isActive ? "active" : ""
+                          }`}
+                        >
+                          {t(child.label)}
+                        </button>
+                      )}
+                    </NavLink>
+                  ))
+                ) : (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setMenuOpen(false)}
                   >
-                    {t("LEVELS")}
-                  </button>
-                )}
-              </NavLink>
+                    {({ isActive }) => (
+                      <button
+                        className={`nav-link text-lg ${
+                          isActive ? "active" : ""
+                        }`}
+                      >
+                        {t(item.label)}
+                      </button>
+                    )}
+                  </NavLink>
+                )
+              )}
 
-              {/* Language Switcher in mobile */}
               <div className="flex gap-6">
                 <LanguageSwitcher />
               </div>

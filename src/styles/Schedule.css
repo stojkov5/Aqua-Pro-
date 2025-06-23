@@ -1,0 +1,68 @@
+.schedule-container {
+  background-color: rgba(0, 124, 247, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 3rem;
+  border-radius: 1.25rem;
+  color: #ffffff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+  margin: 2rem 0;
+}
+
+.schedule-heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.schedule-table-wrapper {
+  overflow-x: auto;
+}
+
+.custom-schedule-table {
+  border-collapse: collapse;
+  text-align: center;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+.custom-schedule-table th {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 1rem;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.custom-schedule-table td {
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  vertical-align: top;
+}
+
+.roster {
+  font-weight: 600;
+}
+
+.roster-1 {
+  color: #e57373;
+}
+.roster-2 {
+  color: #64b5f6;
+}
+.roster-3 {
+  color: #ba68c8;
+}
+.roster-4 {
+  color: #ffd54f;
+}
+
+.roster-multi {
+  display: inline-block;
+}
+
+.aqua {
+  color: #4dd0e1;
+  font-weight: 600;
+}

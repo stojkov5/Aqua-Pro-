@@ -92,7 +92,7 @@ const OurPrograms = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Link
-              to="/team"
+              to="/schedule"
               className="meet-team-btn flex items-center gap-2 justify-center"
             >
               <small className="montserrat-300">{t("ourPrograms.cta")}</small>
