@@ -1,0 +1,287 @@
+{
+  "HOME": "HOME",
+  "ABOUT": "ABOUT",
+  "COACHES": "COACHES",
+  "PROGRAMS": "PROGRAMS",
+  "LEVELS": "LEVELS",
+  "home": {
+    "title": "Dive into Excellence. Swim with Confidence.",
+    "subtitle": "World-class swim training for all ages – right here in Skopje.",
+    "bookLesson": "Book A Trial Lesson",
+    "learnMore": "Learn More"
+  },
+  "aboutSection": {
+    "title": "Who We Are",
+    "description": "Aqua Pro International Swimming Academy is Skopje's premier swim training center, offering world-class instruction in a safe, structured, and motivating environment. With internationally certified coaches and personalized programs, we help swimmers of all ages unlock their full potential – whether it’s their first splash or the road to competition.",
+    "readMore": "Read More"
+  },
+  "ourPrograms": {
+    "title": "Programs for Every Level",
+    "subtitle": "Tailored swim lessons for every stage of the journey.",
+    "cta": "View Full Schedule",
+    "programs": [
+      {
+        "title": "Learn to Swim (Ages 3+)",
+        "description": "Building water confidence through structured play."
+      },
+      {
+        "title": "Stroke Development (Juniors & Teens)",
+        "description": "Focused technique improvement for young swimmers."
+      },
+      {
+        "title": "Competitive Swim Training",
+        "description": "For athletes aiming for performance and national/international events."
+      },
+      {
+        "title": "Adult Swimming",
+        "description": "Whether learning to swim or refining technique, it’s never too late."
+      },
+      {
+        "title": "Private Lessons",
+        "description": "One-on-one coaching for rapid progress."
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "What Makes Us Different?",
+    "subtitle": "Why Choose Aqua Pro?",
+    "features": [
+      {
+        "icon": "bookmark",
+        "label": "International Standards"
+      },
+      {
+        "icon": "coach",
+        "label": "Certified, Experienced Coaches"
+      },
+      {
+        "icon": "progress",
+        "label": "Progress Tracking & Feedback"
+      },
+      {
+        "icon": "facility",
+        "label": "Modern Facilities in Skopje"
+      },
+      {
+        "icon": "safety",
+        "label": "Focus on Safety and Enjoyment"
+      },
+      {
+        "icon": "language",
+        "label": "Multilingual Staff (Macedonian, English, etc.)"
+      }
+    ]
+  },
+  "coach": {
+    "title": "Our Team of Professionals",
+    "subtitle": "Our coaches are certified by international swim bodies and bring years of experience teaching swimmers of all ages and abilities.",
+    "cta": "Meet the Team"
+  },
+  "testimonials": {
+    "title": "What Parents and Swimmers Say",
+    "quotes": [
+      "My son went from afraid of the water to swimming laps in weeks!",
+      "Professional, friendly, and motivating coaches.",
+      "The best swim academy in Skopje – hands down."
+    ]
+  },
+  "location": {
+    "title": "Flexible Schedule. Central Location.",
+    "subtitle": "Visit us at the Skopje Sports Center",
+    "scheduleBtn": "See Schedule",
+    "bookBtn": "Book Now"
+  },
+  "registration": {
+    "title": "Get Started Today",
+    "steps": [
+      "Choose your program",
+      "Book a free trial",
+      "Join the Aqua Pro family"
+    ],
+    "plans": [
+      {
+        "title": "Monthly Plan",
+        "price": "€60 / month",
+        "details": "Includes 2 sessions per week."
+      },
+      {
+        "title": "Private Lessons",
+        "price": "€35 / session",
+        "details": "One-on-one coaching, flexible scheduling."
+      },
+      {
+        "title": "Family Package",
+        "price": "€160 / month",
+        "details": "Covers up to 3 family members, 2 sessions/week each."
+      }
+    ],
+    "cta": "Register Now"
+  },
+  "about": {
+    "title": "Recognisable for elite organisation, professional work by the coaches, healthy swimmers, and happy parents",
+    "visionTitle": "VISION",
+    "visionText": "Swimming club AQUA PRO – ACADEMY Martin Stefanovski, through a professional coaching program, to enable every swimmer to gradually and in a healthy way develop their swimming skills to the limit of their capabilities. To be a club from which top and quality swimmers will emerge, representatives who will represent the country in major European and world competitions. Let's advocate for the introduction of swimming in primary schools as a compulsory sport, and the promotion of lifelong swimming as an integral part of modern and cultural living.",
+    "missionTitle": "MISSION",
+    "missionText": "Our mission is for every child to develop swimming skills from a young age, to raise the quality of sports swimming to the highest level, to increase the mass of swimming in Skopje and beyond, and to run the club in a modern and high-quality way. Our club should be recognised for top organisation, professional work of trainers, healthy swimmers and satisfied parents.",
+    "goalsTitle": "GOALS AND OBJECTIVES",
+    "goalsList": [
+      "training of non-swimmers and swimmers;",
+      "encouraging physical health;",
+      "application of swimming in preventive therapeutic and rehabilitation purposes;",
+      "development and availability of swimming aids;",
+      "promoting the sport of swimming in R.M."
+    ]
+  },
+  "coaches": {
+    "title": "MEET THE COACHES",
+    "intro": "Our coaching staff consists of professionals with many years of experience both in and out of the swimming pool. Professors of physical education, Masters of sports management, physiotherapists, former and current national champions and record holders — they are all helping your children learn the sport we all love in the best way possible.",
+    "readMore": "Read More",
+    "data": [
+      {
+        "id": 1,
+        "name": "Martin Stefanovski",
+        "image": "/Coaches/Martin-S.webp",
+        "about": "Martin Stefanovski Master's Degree in Sports Management. Professional swimmer, multinational record holder, participant and medallist in numerous major international competitions of European and world character. In 2007, he became a member of the national swimming team, participating in the Balkan Games in Athens. Through his international experience as a swimmer, he took part in the World University Games in Shenzhen - China (2011), Gwangju - Korea (2015), and Taipei - Taiwan (2017) as a coach of the national team."
+      },
+      {
+        "id": 2,
+        "name": "Sotir Trajkovski- Coci",
+        "image": "/Coaches/Coci.webp",
+        "about": "Graduated Economist. National representative and record holder, participant and medalist in international competitions, youngest swimmer to complete the Ohrid Marathon. Has 10 years of experience as a coach, with many successful students and international competitors."
+      },
+      {
+        "id": 3,
+        "name": "Jovan Vaklinski",
+        "image": "/Coaches/Jovan.webp",
+        "about": "Graduated physiotherapist. Has extensive coaching experience and a background in aquatics. Former player for Macedonia's National Waterpolo Team. Participated in therapeutic swimming and hydro kinesiotherapy projects."
+      },
+      {
+        "id": 4,
+        "name": "Stefan Stefanovski",
+        "image": "/Coaches/Stefan.webp",
+        "about": "Graduated physiotherapist. Many years of swimming experience, multiple-time national champion and former record holder, with outstanding results in both national and international competitions."
+      },
+      {
+        "id": 5,
+        "name": "Vesna Trajkovska Sterjov",
+        "image": "/Coaches/Vesna.webp",
+        "about": "Graduated professor of physical culture. Member of the national team of Macedonia with appearances in numerous competitions including Balkan Games, European and World Youth Championships. Current National Record Holder. Competed at the Ohrid Marathon 4 times. 15 years of experience as a swimming coach."
+      }
+    ]
+  },
+  "levels": {
+    "title": "Swimming Levels",
+    "modal": {
+      "focus": "Focus",
+      "goals": "Goals"
+    },
+    "data": [
+      {
+        "id": 1,
+        "name": "Level 1",
+        "age": "4-6 years",
+        "focus": "COMFORT",
+        "logo": "/Levels/lvl1.webp",
+        "description": "This beginner level builds a foundation to help children feel comfortable with basic swimming skills.",
+        "goals": "Overcome fear, proper breath control, comfort with submersion, independence floating on front and back, wall push-offs, back float safety position, and basic backstroke."
+      },
+      {
+        "id": 2,
+        "name": "Level 2",
+        "age": "5-7 years",
+        "focus": "CONTROL",
+        "logo": "/Levels/lvl2.webp",
+        "description": "This advanced beginner level helps swimmers control their breathing while swimming.",
+        "goals": "Proper movement in water using basic freestyle and backstroke techniques and breath control."
+      },
+      {
+        "id": 3,
+        "name": "Level 3",
+        "age": "6-8 years",
+        "focus": "INDEPENDENCE",
+        "logo": "/Levels/lvl3.webp",
+        "description": "Teaches swimmers breath control and efficient swimming to gain independence in water.",
+        "goals": "Mastering freestyle and backstroke technique, side breathing, and intro to breaststroke."
+      },
+      {
+        "id": 4,
+        "name": "Level 4",
+        "age": "7-9 years",
+        "focus": "RHYTHM",
+        "logo": "/Levels/lvl4.webp",
+        "description": "Helps swimmers develop effective coordination of arms, legs, breathing, and body position.",
+        "goals": "Rhythmic freestyle, improved backstroke, breaststroke timing, and water feel drills."
+      },
+      {
+        "id": 5,
+        "name": "Level 5",
+        "age": "8-10 years",
+        "focus": "TECHNIQUE",
+        "logo": "/Levels/lvl5.webp",
+        "description": "Helps students refine underwater skills in freestyle, backstroke, sidestroke, and butterfly.",
+        "goals": "Demonstrate freestyle with rhythmic breathing, backstroke, breaststroke, treading water, sidestroke, and butterfly basics."
+      },
+      {
+        "id": 6,
+        "name": "Level 6",
+        "age": "9+ years",
+        "focus": "ENDURANCE",
+        "logo": "/Levels/lvl6.webp",
+        "description": "Advanced group focuses on strengthening strokes and building endurance.",
+        "goals": "Swim longer distances in all strokes with ease and learn flip turns."
+      }
+    ]
+  },
+  "programs": {
+    "title": "2024 Aqua Pro Swim Meet",
+    "eventInfo": "Event Info",
+    "pool": "25m pool • 8 lanes • Electronic timing",
+    "temp": "Water Temp: 26.5 °C",
+    "entryFee": "Entry Fee: 350 MKD / 6€ per event",
+    "deadline": "Deadline: 20 Dec 2024 at 23:59",
+    "rules": "Rules: WA, LEN, National Federation",
+    "download": "Download Official Cup PDF",
+    "locationContact": "Location & Contact",
+    "location": "📍 A1 Arena Boris Trajkovski",
+    "categoriesTitle": "Categories",
+    "categories": [
+      { "label": "A", "description": "Absolute" },
+      { "label": "B", "description": "2009-2010" },
+      { "label": "C", "description": "2011-2012" },
+      { "label": "D", "description": "2013-2014" },
+      { "label": "E", "description": "2015-2016" },
+      { "label": "F", "description": "2017 & younger" }
+    ],
+    "events": "Events",
+    "eventsList": [
+      "100m Freestyle",
+      "50m Breaststroke",
+      "100m Backstroke",
+      "50m Freestyle",
+      "100m IM",
+      "100m Butterfly",
+      "50m Backstroke",
+      "100m Breaststroke",
+      "50m Butterfly",
+      "200m Freestyle"
+    ],
+    "schedule": "Schedule",
+    "warmup": "Warm-Up: 13:00",
+    "raceStart": "Race Start: 14:00",
+    "medals": "Talent Cup Medals",
+    "medalRounds": [
+      "100m Freestyle / 50m Breaststroke",
+      "100m Backstroke / 50m Freestyle",
+      "100m IM / 50m Butterfly",
+      "50m Backstroke / 100m Breaststroke",
+      "50m Butterfly / 200m Freestyle"
+    ],
+    "awards": "Awards",
+    "award1": "🏅 Top 3 competitors in each individual event will receive medals.",
+    "award2": "🏆 The best 3 results by FINA points in categories A–F will earn a Cup (Men & Women).",
+    "award3": "🆓 Unlimited event participation per swimmer.",
+    "award4": "💶 Best Male & Female in Category A scoring over 1600 FINA 2025 points in two events will receive €300.",
+    "health": "Health Disclaimer",
+    "healthText": "Each swimming club is responsible for the health condition of its swimmers."
+  }
+}
