@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import "../styles/Footer.css";
 import LanguageSwitcher from "../components/LanguageSwithcer";
-
+import { Link } from "react-router";
 const Footer = () => {
   return (
     <motion.footer
@@ -29,13 +29,15 @@ const Footer = () => {
             <h3 className="footer-title">Quick Links</h3>
             <ul className="footer-links">
               <li>
-                <a href="/programs">Programs</a>
+                <Link to="/programs">Programs</Link>
               </li>
               <li>
-                <a href="/team">Coaches</a>
+                <Link to="/team">Coaches</Link>
               </li>
               <li>
-                <a href="/PrivacyPolicy.pdf" target="_blank">FAQ</a>
+                <a href="/PrivacyPolicy.pdf" target="_blank">
+                  FAQ
+                </a>
               </li>
               <li>
                 <a href="/contact">Contact</a>
@@ -59,16 +61,24 @@ const Footer = () => {
           <Col xs={24} sm={12} md={6} className="footer-content">
             <h3 className="footer-title">Follow Us</h3>
             <div className="footer-socials">
-              <a href="https://www.facebook.com/AquaProSwimming/?ref=_xav_ig_profile_page_web_0515#" target="_blank">
+              <a
+                href="https://www.facebook.com/AquaProSwimming/?ref=_xav_ig_profile_page_web_0515#"
+                target="_blank"
+              >
                 <FaFacebookF />
               </a>
-              <a href="https://www.instagram.com/aquaproswimming/"target="_blank">
+              <a
+                href="https://www.instagram.com/aquaproswimming/"
+                target="_blank"
+              >
                 <FaInstagram />
               </a>
-              <a href="https://www.youtube.com/@aquaproswimmingacademy5793" target="_blank">
+              <a
+                href="https://www.youtube.com/@aquaproswimmingacademy5793"
+                target="_blank"
+              >
                 <FaYoutube />
               </a>
-              
             </div>
             <div className="language-switcher">
               <LanguageSwitcher />
