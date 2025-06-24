@@ -58,7 +58,7 @@ export default function Navbar() {
 
   return (
     <Row justify="center" className="absolute w-full z-50 py-3">
-      <Col span={20}>
+      <Col xs={20} lg={23}>
         <div className="flex items-center justify-between w-full">
           <div className="text-xl font-bold text-white z-10">
             <NavLink to="/">
@@ -179,7 +179,7 @@ export default function Navbar() {
         </div>
 
         {menuOpen && isMobile && (
-          <div className="mobile-menu fixed top-0 left-0 w-full h-screen backdrop-blur-xl text-white flex flex-col items-center justify-center z-50">
+          <div className="mobile-menu fixed top-0 left-0 w-full h-screen bg-blue-500/30 backdrop-blur-xl text-white flex flex-col items-center justify-center z-50">
             <div className="flex flex-col items-center gap-6">
               {navLinks.map((item) =>
                 item.dropdown ? (

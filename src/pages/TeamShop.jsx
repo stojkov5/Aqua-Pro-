@@ -1,0 +1,176 @@
+import React, { useState } from "react";
+import { Row, Col, Modal, Select } from "antd";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { ShoppingCartOutlined } from "@ant-design/icons";
+import { Link } from "react-router";
+import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
+import "react-toastify/dist/ReactToastify.css";
+import "../styles/TeamShop.css";
+import productsData from "../data/products";
+
+const sizes = [
+  "S", "M", "L", "XL",
+  "4yo", "6yo", "8yo", "10yo", "12yo", "14yo (XS)"
+];
+
+const fetchProducts = async () =>
+  new Promise((resolve) => setTimeout(() => resolve(productsData), 100));
+
+const getStoredCart = () => {
+  try {
+    const saved = localStorage.getItem("aquaProCart");
+    return saved ? JSON.parse(saved) : [];
+  } catch {
+    return [];
+  }
+};
+
+const TeamShop = () => {
+  const { t } = useTranslation();
+
+  const { data: products = [] } = useQuery({
+    queryKey: ["products"],
+    queryFn: fetchProducts,
+  });
+
+  const { data: cart = [] } = useQuery({
+    queryKey: ["cart"],
+    queryFn: () => getStoredCart(),
+  });
+
+  const queryClient = useQueryClient();
+  const [openProduct, setOpenProduct] = useState(null);
+  const [selectedSize, setSelectedSize] = useState("");
+
+  const updateCart = (newCart) => {
+    localStorage.setItem("aquaProCart", JSON.stringify(newCart));
+    queryClient.invalidateQueries({ queryKey: ["cart"] });
+  };
+
+  const handleAddToCart = () => {
+    if (openProduct.hasSizes && !selectedSize) {
+      toast.warning(t("teamShop.toastWarning"));
+      return;
+    }
+
+    const newItem = {
+      ...openProduct,
+      size: openProduct.hasSizes ? selectedSize : null,
+    };
+
+    const updatedCart = [...cart, newItem];
+    updateCart(updatedCart);
+
+    toast.success(t("teamShop.toastAdded"));
+    setOpenProduct(null);
+    setSelectedSize("");
+  };
+
+  return (
+    <Row justify="center" className="py-30 relative">
+      <Col span={20} style={{ position: "relative" }}>
+        {/* Cart Button */}
+        <div className="cart-icon-wrapper">
+          <Link to="/cart" className="cart-icon-button">
+            <ShoppingCartOutlined />
+            {cart.length > 0 && (
+              <span className="cart-count-badge">{cart.length}</span>
+            )}
+          </Link>
+        </div>
+
+        <div className="shop-section">
+          <h1 className="shop-title">{t("teamShop.title")}</h1>
+          <p className="shop-text">{t("teamShop.description")}</p>
+
+          <Row gutter={[24, 24]}>
+            {products.map((product) => (
+              <Col key={product.id} xs={24} sm={12} md={8} lg={8}>
+                <div
+                  className="shop-card"
+                  onClick={() => setOpenProduct(product)}
+                >
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="shop-card-img"
+                  />
+                  <div className="shop-card-content">
+                    <h3 className="shop-name">{product.name}</h3>
+                    <p className="shop-about">{product.description}</p>
+                    <div className="btn-section flex justify-center items-center">
+                      <button
+                        className="shop-button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+
+                          if (product.hasSizes) {
+                            setOpenProduct(product);
+                          } else {
+                            const newItem = { ...product, size: null };
+                            const updatedCart = [...cart, newItem];
+                            updateCart(updatedCart);
+                            toast.success(t("teamShop.toastAdded"));
+                          }
+                        }}
+                      >
+                        {t("teamShop.addToCart")}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
+
+          <Modal
+            open={!!openProduct}
+            onCancel={() => {
+              setOpenProduct(null);
+              setSelectedSize("");
+            }}
+            footer={null}
+            centered
+            className="shop-modal"
+          >
+            {openProduct && (
+              <>
+                <img
+                  src={openProduct.image}
+                  alt={openProduct.name}
+                  className="modal-img"
+                />
+                <h2 className="modal-name">{openProduct.name}</h2>
+                <p className="modal-about">{openProduct.description}</p>
+
+                {openProduct.hasSizes && (
+                  <div style={{ marginBottom: "1rem" }}>
+                    <Select
+                      placeholder={t("teamShop.selectSizePlaceholder")}
+                      value={selectedSize || undefined}
+                      onChange={(val) => setSelectedSize(val)}
+                      style={{ width: 200 }}
+                    >
+                      {sizes.map((size) => (
+                        <Select.Option key={size} value={size}>
+                          {size}
+                        </Select.Option>
+                      ))}
+                    </Select>
+                  </div>
+                )}
+
+                <button className="shop-button" onClick={handleAddToCart}>
+                  {t("teamShop.addToCart")}
+                </button>
+              </>
+            )}
+          </Modal>
+        </div>
+      </Col>
+    </Row>
+  );
+};
+
+export default TeamShop;

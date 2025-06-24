@@ -3,7 +3,7 @@ import { Row, Col } from "antd";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "../styles/Location.css";
-
+import {Link} from "react-router";
 const containerVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -70,7 +70,8 @@ const Location = () => {
           </motion.div>
 
           {/* Buttons */}
-          <motion.div
+          <Link to="/schedule">
+           <motion.div
             className="location-button-container"
             variants={itemVariants}
           >
@@ -96,6 +97,8 @@ const Location = () => {
               {t("location.bookBtn")}
             </motion.button>
           </motion.div>
+          </Link>
+         
         </Col>
       </Row>
     </motion.div>

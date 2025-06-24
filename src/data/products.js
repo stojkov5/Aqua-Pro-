@@ -1,0 +1,67 @@
+const products = [
+  {
+    id: 1,
+    name: "Finis Freestyle Paddles",
+    image: "/Products/FsPaddles.jpg",
+    description: "28 EUR / 1680 MKD",
+    hasSizes: false,
+  },
+  {
+    id: 2,
+    name: "Finis Gear Bag",
+    image: "/Products/Bag.webp",
+    description: "20 EUR / 1200 MKD",
+    hasSizes: false,
+  },
+  {
+    id: 3,
+    name: "Floating Swim Fins",
+    image: "/Products/Fins.webp",
+    description: "32 - 45 EUR / 1900 - 2700 MKD",
+    hasSizes: false,
+  },
+  {
+    id: 4,
+    name: "Alignment Kickboard",
+    image: "/Products/Kickboard.webp",
+    description: "33 EUR / 1980 MKD",
+    hasSizes: false,
+  },
+  {
+    id: 5,
+    name: "Technique & Training Snorkel",
+    image: "/Products/Snorkel.webp",
+    description: "36 EUR / 2160 MKD",
+    hasSizes: false,
+  },
+  {
+    id: 6,
+    name: "Women's Swimsuit",
+    image: "/Products/WomenSwimsuit.webp",
+    description: "42 EUR / 2520 MKD",
+    hasSizes: true,
+  },
+  {
+    id: 7,
+    name: "Men's Swimsuit",
+    image: "/Products/MenSwimsuit.webp",
+    description: "40 EUR / 2400 MKD",
+    hasSizes: true,
+  },
+  {
+    id: 8,
+    name: "Team T-Shirt",
+    image: "/Products/TShirt.webp",
+    description: "18 EUR / 1080 MKD",
+    hasSizes: true,
+  },
+  {
+    id: 9,
+    name: "Team Hoodie",
+    image: "/Products/Hoodie.webp",
+    description: "30 EUR / 1800 MKD",
+    hasSizes: true,
+  },
+];
+
+export default products;

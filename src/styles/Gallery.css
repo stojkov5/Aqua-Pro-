@@ -1,0 +1,63 @@
+.gallery-wrapper {
+  background-color: rgba(0, 124, 247, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-title {
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+  margin-bottom: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.gallery-card {
+  background-color: rgba(0, 124, 247, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  height: 100%;
+}
+
+.gallery-img {
+  width: 100%;
+  
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.gallery-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.custom-pagination .ant-pagination-item {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.custom-pagination .ant-pagination-item-active {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: transparent;
+}
+
+.custom-pagination .ant-pagination-item-active a {
+  color: #fff;
+}
+
+.custom-pagination .ant-pagination-item a {
+  color: #e0e0e0;
+}
+
+.custom-pagination .ant-pagination-next,
+.custom-pagination .ant-pagination-prev {
+  color: #fff;
+}

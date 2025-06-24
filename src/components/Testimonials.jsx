@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Carousel, Row, Col } from "antd";
 import { useTranslation } from "react-i18next";
 import "../styles/Testimonials.css";
-
+import { Link } from "react-router";
 const containerVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -40,7 +40,10 @@ const Testimonials = () => {
       variants={containerVariants}
     >
       <Row justify="center">
-        <Col span={20} className="testimonials-wrapper text-center rounded-2xl p-8">
+        <Col
+          span={20}
+          className="testimonials-wrapper text-center rounded-2xl p-8"
+        >
           {/* Headline */}
           <motion.h1
             className="testimonials-title montserrat-700"
@@ -58,6 +61,15 @@ const Testimonials = () => {
                 </div>
               ))}
             </Carousel>
+          </motion.div>
+          {/* Button */}
+          <motion.div variants={itemVariants} className="mt-6">
+            <Link to="/gallery">
+              <button className="testimonials-btn">
+                {t("testimonials.cta")}
+               
+              </button>
+            </Link>
           </motion.div>
         </Col>
       </Row>

@@ -7,6 +7,9 @@ import Coaches from "../src/pages/Coaches";
 import Levels from "../src/pages/Levels";
 import Schedule from "../src/components/Schedule";
 import CompetitionSquad from "../src/components/CompetitionSquad";
+import TeamShop from "../src/pages/TeamShop";
+import Cart from "../src/components/Cart";
+import Gallery from "../src/components/Gallery";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +39,18 @@ const routes = createBrowserRouter([
       {
         path: "/squad",
         element: <CompetitionSquad />,
+      },
+      {
+        path: "/shop",
+        element: <TeamShop />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/gallery",
+        element: <Gallery />,
       },
     ],
   },
