@@ -86,7 +86,8 @@
       "My son went from afraid of the water to swimming laps in weeks!",
       "Professional, friendly, and motivating coaches.",
       "The best swim academy in Skopje – hands down."
-    ]
+    ],
+    "cta": "Gallery"
   },
   "location": {
     "title": "Flexible Schedule. Central Location.",
@@ -345,5 +346,13 @@
     "pathwayParagraph1": "Since its foundation, the goal of the Aqua Pro Swimming Academy has been to support the development of each swimmer to reach their true swimming potential. Over time, Aqua Pro's reputation has steadily increased. The level of our swimmers has increased not only locally, but also worldwide, now the most successful swimmers in Macedonia and the region are training in Aqua Pro.",
     "pathwayParagraph2": "Our team structure is designed to be progressive, for swimmers to develop through levels in accordance with a long-term athlete development plan. We have four competitor levels (10-12, 13-15, 16+, Elite) which allow each swimmer to develop and train according to their correct age, ability, commitment, goals and potential. This structure allows swimmers of all abilities and dedication to enjoy the sport equally.",
     "pathwayParagraph3": "The Competition Pathway has evolved to support swimmers who aim to train and compete. Training is carried out with an individual program, but most importantly according to the correct age and ability - this allows swimmers to choose their commitment to be in line with their goals."
+  },
+  "teamShop": {
+    "title": "Team Shop",
+    "description": "All champions rely on the best gear. Membership of our club gives you access to the best swimming equipment and sportswear in the region. We want you to look your best when you're being the best!",
+    "addToCart": "Add to Cart",
+    "selectSizePlaceholder": "Select size",
+    "toastAdded": "✅ Added to cart!",
+    "toastWarning": "Please select a size before adding to cart."
   }
 }
