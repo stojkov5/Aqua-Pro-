@@ -56,18 +56,24 @@ const Home = () => {
                 custom={2}
                 variants={textVariants}
               >
-                <motion.button
-                  className="landing-btn montserrat-300"
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 0 12px rgba(255,255,255,0.4)",
-                  }}
-                  whileTap={{ scale: 0.98 }}
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfdxA7-fPEZUGFV9oQB9TaEX_Xtwsp0ED8NessTaU1I9FGXQw/viewform?usp=send_form"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {t("home.bookLesson")}
-                </motion.button>
+                  <motion.button
+                    className="landing-btn montserrat-300"
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 0 12px rgba(255,255,255,0.4)",
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {t("home.bookLesson")}
+                  </motion.button>
+                </a>
 
-               <Link to="/about">
+                <Link to="/about">
                   <motion.button
                     className="landing-btn montserrat-300"
                     whileHover={{

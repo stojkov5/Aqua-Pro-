@@ -354,5 +354,22 @@
     "selectSizePlaceholder": "Select size",
     "toastAdded": "✅ Added to cart!",
     "toastWarning": "Please select a size before adding to cart."
+  },
+  "footer": {
+    "contactTitle": "Contact Us",
+    "address": "Skopje Sports Center",
+    "quickLinksTitle": "Quick Links",
+    "links": {
+      "programs": "Competitions",
+      "coaches": "Coaches",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
+    "newsletterTitle": "Newsletter",
+    "newsletterDesc": "Subscribe for updates and offers",
+    "emailPlaceholder": "Your email",
+    "subscribe": "Subscribe",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved."
   }
 }

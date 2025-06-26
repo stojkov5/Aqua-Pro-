@@ -80,16 +80,22 @@ const Registration = () => {
             className="mt-8 registration-button-container"
             variants={itemVariants}
           >
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 12px rgba(255,255,255,0.4)",
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="registration-btn montserrat-300"
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfdxA7-fPEZUGFV9oQB9TaEX_Xtwsp0ED8NessTaU1I9FGXQw/viewform?usp=send_form"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {t("registration.cta")}
-            </motion.button>
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 12px rgba(255,255,255,0.4)",
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="registration-btn montserrat-300"
+              >
+                {t("registration.cta")}
+              </motion.button>
+            </a>
           </motion.div>
         </Col>
       </Row>

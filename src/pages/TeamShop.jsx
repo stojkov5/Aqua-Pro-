@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Modal, Select } from "antd";
+import { Row, Col, Modal, Select, Carousel } from "antd";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Link } from "react-router";
@@ -136,11 +136,18 @@ const TeamShop = () => {
           >
             {openProduct && (
               <>
-                <img
-                  src={openProduct.image}
-                  alt={openProduct.name}
-                  className="modal-img"
-                />
+                <Carousel autoplay dots className="shop-carousel">
+                  {(openProduct.images || [openProduct.image]).map((img, idx) => (
+                    <div key={idx}>
+                      <img
+                        src={img}
+                        alt={`${openProduct.name} ${idx + 1}`}
+                        className="modal-img"
+                      />
+                    </div>
+                  ))}
+                </Carousel>
+
                 <h2 className="modal-name">{openProduct.name}</h2>
                 <p className="modal-about">{openProduct.description}</p>
 

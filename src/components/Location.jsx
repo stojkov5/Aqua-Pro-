@@ -3,7 +3,7 @@ import { Row, Col } from "antd";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "../styles/Location.css";
-import {Link} from "react-router";
+import { Link } from "react-router";
 const containerVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -70,35 +70,40 @@ const Location = () => {
           </motion.div>
 
           {/* Buttons */}
-          <Link to="/schedule">
-           <motion.div
+
+          <motion.div
             className="location-button-container"
             variants={itemVariants}
           >
-            <motion.button
-              className="location-btn montserrat-300"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 12px rgba(255,255,255,0.4)",
-              }}
-              whileTap={{ scale: 0.98 }}
+            <Link to="/schedule">
+              <motion.button
+                className="location-btn montserrat-300"
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 12px rgba(255,255,255,0.4)",
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {t("location.scheduleBtn")}
+              </motion.button>
+            </Link>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfdxA7-fPEZUGFV9oQB9TaEX_Xtwsp0ED8NessTaU1I9FGXQw/viewform?usp=send_form"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {t("location.scheduleBtn")}
-            </motion.button>
-
-            <motion.button
-              className="location-btn montserrat-300"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 12px rgba(255,255,255,0.2)",
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {t("location.bookBtn")}
-            </motion.button>
+              <motion.button
+                className="location-btn montserrat-300"
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 12px rgba(255,255,255,0.2)",
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {t("location.bookBtn")}
+              </motion.button>
+            </a>
           </motion.div>
-          </Link>
-         
         </Col>
       </Row>
     </motion.div>
