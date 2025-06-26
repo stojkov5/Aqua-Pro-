@@ -354,5 +354,22 @@
     "selectSizePlaceholder": "Избери големина",
     "toastAdded": "✅ Додадено во кошничката!",
     "toastWarning": "Ве молиме изберете големина пред да додадете во кошничката."
+  },
+  "footer": {
+    "contactTitle": "Контакт",
+    "address": "Skopje Sports Center",
+    "quickLinksTitle": "Линкови",
+    "links": {
+      "programs": "Натпревари",
+      "coaches": "Тренери",
+      "faq": "FAQ",
+      "contact": "Контакт"
+    },
+    "newsletterTitle": "Весник",
+    "newsletterDesc": "Претплатете се за вести и понуди ",
+    "emailPlaceholder": "Вашиоот Емаил",
+    "subscribe": "Претплати се",
+    "followUs": "Заследете не",
+    "rights": "All rights reserved."
   }
 }
