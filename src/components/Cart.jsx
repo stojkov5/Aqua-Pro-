@@ -7,9 +7,9 @@ import { toast } from "react-toastify";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-const SERVICE_ID = "service_nhlwz29";
-const TEMPLATE_ID = "template_ls0yo1o";
-const PUBLIC_KEY = "lEx7cbDMDpseboSDC";
+const SERVICE_ID = "service_8qhrp3i";
+const TEMPLATE_ID = "template_xctsb5p";
+const PUBLIC_KEY = "4S2Y830MkEiYQ3nBq";
 
 const Cart = () => {
   const queryClient = useQueryClient();
@@ -90,7 +90,11 @@ const Cart = () => {
               <ul className="cart-list">
                 {cart.map((item, index) => (
                   <li key={index} className="cart-item">
-                    <img src={item.image} alt={item.name} className="cart-img" />
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="cart-img"
+                    />
                     <div className="cart-details">
                       <h4>{item.name}</h4>
                       <p>{item.description}</p>
@@ -115,7 +119,9 @@ const Cart = () => {
                   initialValues={{ fullName: "", email: "", phone: "" }}
                   validationSchema={Yup.object({
                     fullName: Yup.string().required("Full Name is required"),
-                    email: Yup.string().email("Invalid email").required("Email is required"),
+                    email: Yup.string()
+                      .email("Invalid email")
+                      .required("Email is required"),
                     phone: Yup.string().required("Phone number is required"),
                   })}
                   onSubmit={(values, { setSubmitting, resetForm }) => {
@@ -154,7 +160,11 @@ const Cart = () => {
                           placeholder="Full Name"
                           className="cart-input"
                         />
-                        <ErrorMessage name="fullName" component="div" className="cart-error" />
+                        <ErrorMessage
+                          name="fullName"
+                          component="div"
+                          className="cart-error"
+                        />
                       </div>
                       <div className="form-group w-full md:w-1/2">
                         <Field
@@ -163,7 +173,11 @@ const Cart = () => {
                           placeholder="Email"
                           className="cart-input"
                         />
-                        <ErrorMessage name="email" component="div" className="cart-error" />
+                        <ErrorMessage
+                          name="email"
+                          component="div"
+                          className="cart-error"
+                        />
                       </div>
                       <div className="form-group w-full md:w-1/2">
                         <Field
@@ -172,7 +186,11 @@ const Cart = () => {
                           placeholder="Phone Number"
                           className="cart-input"
                         />
-                        <ErrorMessage name="phone" component="div" className="cart-error" />
+                        <ErrorMessage
+                          name="phone"
+                          component="div"
+                          className="cart-error"
+                        />
                       </div>
                       <button
                         type="submit"
