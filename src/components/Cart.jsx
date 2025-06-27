@@ -14,22 +14,29 @@ const PUBLIC_KEY = "lEx7cbDMDpseboSDC";
 const Cart = () => {
   const queryClient = useQueryClient();
 
+  const getStoredCart = () => {
+    try {
+      const saved = localStorage.getItem("aquaProCart");
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  };
+
   const { data: cart = [] } = useQuery({
     queryKey: ["cart"],
-    queryFn: () => {
-      try {
-        const saved = localStorage.getItem("aquaProCart");
-        return saved ? JSON.parse(saved) : [];
-      } catch {
-        return [];
-      }
-    },
+    queryFn: getStoredCart,
   });
 
   const removeFromCart = (index) => {
     const updated = [...cart];
     updated.splice(index, 1);
     localStorage.setItem("aquaProCart", JSON.stringify(updated));
+    queryClient.invalidateQueries({ queryKey: ["cart"] });
+  };
+
+  const clearCart = () => {
+    localStorage.removeItem("aquaProCart");
     queryClient.invalidateQueries({ queryKey: ["cart"] });
   };
 
@@ -68,33 +75,6 @@ const Cart = () => {
     return { cart_items, total_price };
   };
 
-  const sendOrderEmail = (values) => {
-    if (cart.length === 0) {
-      toast.warn("Your cart is empty.");
-      return;
-    }
-
-    const { cart_items, total_price } = getCartSummary();
-
-    const templateParams = {
-      full_name: values.fullName,
-      email: values.email,
-      phone: values.phone,
-      cart_items,
-      total_price: `${total_price} EUR`,
-    };
-
-    emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
-      .then(() => {
-        toast.success("Order email sent!");
-      })
-      .catch((error) => {
-        console.error("EmailJS Error:", error);
-        toast.error("Failed to send order email.");
-      });
-  };
-
   const { total_price } = getCartSummary();
 
   return (
@@ -126,12 +106,10 @@ const Cart = () => {
                 ))}
               </ul>
 
-              {/* Total price display */}
               <div className="cart-total text-right mt-4 text-lg font-semibold">
                 Total: {total_price.toFixed(2)} EUR
               </div>
 
-              {/* Order Form */}
               <div className="cart-form mt-6">
                 <Formik
                   initialValues={{ fullName: "", email: "", phone: "" }}
@@ -140,23 +118,60 @@ const Cart = () => {
                     email: Yup.string().email("Invalid email").required("Email is required"),
                     phone: Yup.string().required("Phone number is required"),
                   })}
-                  onSubmit={(values, { setSubmitting }) => {
-                    sendOrderEmail(values);
-                    setSubmitting(false);
+                  onSubmit={(values, { setSubmitting, resetForm }) => {
+                    const { cart_items, total_price } = getCartSummary();
+
+                    const templateParams = {
+                      full_name: values.fullName,
+                      email: values.email,
+                      phone: values.phone,
+                      cart_items,
+                      total_price: `${total_price} EUR`,
+                    };
+
+                    emailjs
+                      .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+                      .then(() => {
+                        toast.success("Order email sent!");
+                        resetForm();
+                        clearCart();
+                      })
+                      .catch((error) => {
+                        console.error("EmailJS Error:", error);
+                        toast.error("Failed to send order email.");
+                      })
+                      .finally(() => {
+                        setSubmitting(false);
+                      });
                   }}
                 >
                   {({ isValid, dirty, isSubmitting }) => (
                     <Form className="flex flex-col items-center gap-4">
                       <div className="form-group w-full md:w-1/2">
-                        <Field name="fullName" type="text" placeholder="Full Name" className="cart-input" />
+                        <Field
+                          name="fullName"
+                          type="text"
+                          placeholder="Full Name"
+                          className="cart-input"
+                        />
                         <ErrorMessage name="fullName" component="div" className="cart-error" />
                       </div>
                       <div className="form-group w-full md:w-1/2">
-                        <Field name="email" type="email" placeholder="Email" className="cart-input" />
+                        <Field
+                          name="email"
+                          type="email"
+                          placeholder="Email"
+                          className="cart-input"
+                        />
                         <ErrorMessage name="email" component="div" className="cart-error" />
                       </div>
                       <div className="form-group w-full md:w-1/2">
-                        <Field name="phone" type="text" placeholder="Phone Number" className="cart-input" />
+                        <Field
+                          name="phone"
+                          type="text"
+                          placeholder="Phone Number"
+                          className="cart-input"
+                        />
                         <ErrorMessage name="phone" component="div" className="cart-error" />
                       </div>
                       <button
