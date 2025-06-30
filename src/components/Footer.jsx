@@ -23,8 +23,8 @@ const Footer = () => {
           {/* Contact Info */}
           <Col xs={24} sm={12} md={6} className="footer-content">
             <h3 className="footer-title">{t("footer.contactTitle")}</h3>
-            <p>Email: info@aquapro.mk</p>
-            <p>Phone: +389 70 123 456</p>
+            <p>Email: aquaproswim@gmail.com</p>
+            <p>Phone: 071 248 750</p>
             <p>{t("footer.address")}</p>
           </Col>
 

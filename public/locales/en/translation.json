@@ -105,17 +105,17 @@
     "plans": [
       {
         "title": "Monthly Plan",
-        "price": "€60 / month",
+        "price": "€50 / month",
         "details": "Includes 2 sessions per week."
       },
       {
         "title": "Private Lessons",
-        "price": "€35 / session",
+        "price": "€25 / session",
         "details": "One-on-one coaching, flexible scheduling."
       },
       {
         "title": "Family Package",
-        "price": "€160 / month",
+        "price": "€120 / month",
         "details": "Covers up to 3 family members, 2 sessions/week each."
       }
     ],
