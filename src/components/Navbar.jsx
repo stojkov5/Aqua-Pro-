@@ -12,6 +12,7 @@ import { NavLink } from "react-router";
 const navLinks = [
   { to: "/", label: "HOME" },
   {
+    to: "/about",
     label: "ABOUT",
     dropdown: true,
     children: [
@@ -77,23 +78,27 @@ export default function Navbar() {
                       onMouseEnter={handleDropdownEnter}
                       onMouseLeave={handleDropdownLeave}
                     >
-                      <button
-                        onMouseMove={(e) => handleMouseMove(e, index)}
-                        onMouseLeave={() => setHoveredIndex(null)}
-                        className="nav-link relative"
-                      >
-                        <span className="relative z-10">{t(item.label)}</span>
-                        {hoveredIndex === index && (
-                          <span
-                            className="splash"
-                            style={{
-                              top: hoverXY.y - 64,
-                              left: hoverXY.x - 64,
-                            }}
-                          />
+                      <NavLink to={item.to}>
+                        {({ isActive }) => (
+                          <button
+                            onMouseMove={(e) => handleMouseMove(e, index)}
+                            onMouseLeave={() => setHoveredIndex(null)}
+                            className={`nav-link relative ${isActive ? "active" : ""}`}
+                          >
+                            <span className="relative z-10">{t(item.label)}</span>
+                            {hoveredIndex === index && (
+                              <span
+                                className="splash"
+                                style={{
+                                  top: hoverXY.y - 64,
+                                  left: hoverXY.x - 64,
+                                }}
+                              />
+                            )}
+                            <span className="wave-underline" />
+                          </button>
                         )}
-                        <span className="wave-underline" />
-                      </button>
+                      </NavLink>
 
                       {dropdownOpen && (
                         <div className="dropdown-menu absolute top-full mt-2 left-0 gap-2">
@@ -101,13 +106,9 @@ export default function Navbar() {
                             <NavLink to={child.to} key={child.to}>
                               {({ isActive }) => (
                                 <button
-                                  onMouseMove={(e) =>
-                                    handleMouseMove(e, 999 + i)
-                                  }
+                                  onMouseMove={(e) => handleMouseMove(e, 999 + i)}
                                   onMouseLeave={() => setHoveredIndex(null)}
-                                  className={`nav-link relative ${
-                                    isActive ? "active" : ""
-                                  }`}
+                                  className={`nav-link relative ${isActive ? "active" : ""}`}
                                 >
                                   <span className="relative z-10">
                                     {t(child.label)}
@@ -138,9 +139,7 @@ export default function Navbar() {
                       <button
                         onMouseMove={(e) => handleMouseMove(e, index)}
                         onMouseLeave={() => setHoveredIndex(null)}
-                        className={`nav-link relative ${
-                          isActive ? "active" : ""
-                        }`}
+                        className={`nav-link relative ${isActive ? "active" : ""}`}
                       >
                         <span className="relative z-10">{t(item.label)}</span>
                         {(hoveredIndex === index || isActive) && (
@@ -183,23 +182,36 @@ export default function Navbar() {
             <div className="flex flex-col items-center gap-6">
               {navLinks.map((item) =>
                 item.dropdown ? (
-                  item.children.map((child) => (
+                  <>
                     <NavLink
-                      key={child.to}
-                      to={child.to}
+                      key={item.to}
+                      to={item.to}
                       onClick={() => setMenuOpen(false)}
                     >
                       {({ isActive }) => (
                         <button
-                          className={`nav-link text-lg ${
-                            isActive ? "active" : ""
-                          }`}
+                          className={`nav-link text-lg ${isActive ? "active" : ""}`}
                         >
-                          {t(child.label)}
+                          {t(item.label)}
                         </button>
                       )}
                     </NavLink>
-                  ))
+                    {item.children.map((child) => (
+                      <NavLink
+                        key={child.to}
+                        to={child.to}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {({ isActive }) => (
+                          <button
+                            className={`nav-link text-lg ${isActive ? "active" : ""}`}
+                          >
+                            {t(child.label)}
+                          </button>
+                        )}
+                      </NavLink>
+                    ))}
+                  </>
                 ) : (
                   <NavLink
                     key={item.to}
@@ -208,9 +220,7 @@ export default function Navbar() {
                   >
                     {({ isActive }) => (
                       <button
-                        className={`nav-link text-lg ${
-                          isActive ? "active" : ""
-                        }`}
+                        className={`nav-link text-lg ${isActive ? "active" : ""}`}
                       >
                         {t(item.label)}
                       </button>
