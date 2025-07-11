@@ -362,7 +362,7 @@
     "links": {
       "programs": "Competitions",
       "coaches": "Coaches",
-      "faq": "FAQ",
+      "pp": "Privacy Policy",
       "contact": "Contact"
     },
     "newsletterTitle": "Newsletter",
@@ -371,5 +371,78 @@
     "subscribe": "Subscribe",
     "followUs": "Follow Us",
     "rights": "All rights reserved."
+  },
+  "privacy": {
+    "title": "Website - Privacy Policy",
+    "intro": {
+      "organization": "Aqua Pro - International Swimming Academy",
+      "text": "is committed to protecting and respecting your privacy. This privacy statement sets out the basis on which we will process any personal information that we may collect about you as a visitor to",
+      "note": "Please read it carefully. If you have additional questions or require more information, contact us at"
+    },
+    "section1": {
+      "title": "Information You Give Us",
+      "text": "We collect information voluntarily provided by you through forms, emails, phone calls, or other communication. This may include your name, contact information, or your child’s health details, date of birth, and gender."
+    },
+    "section2": {
+      "title": "Information Collected Automatically",
+      "text": "Our website may collect IP addresses, browser type, pages visited, ISP, timestamp, and more, for analytics purposes. This information is not personally identifiable."
+    },
+    "section3": {
+      "title": "Cookies",
+      "text": "We use cookies to improve user experience. Cookies store visitor preferences and session information. You can disable cookies in your browser settings. For more details, read our Cookie Policy."
+    },
+    "section4": {
+      "title": "Third-Party Cookies",
+      "text": "Third parties may set cookies when you visit our website (e.g., enquiry forms). These cookies do not collect personally identifiable information."
+    },
+    "section5": {
+      "title": "Other Information",
+      "text": "Email, phone, and CCTV communications may be recorded for safety and compliance. Business contacts may share your details with us. We may use third-party sources for verification and legal obligations."
+    },
+    "section6": {
+      "title": "How We Use the Information",
+      "list": [
+        "Send marketing emails relevant to you",
+        "Improve website performance and services",
+        "Ensure security of premises and online systems",
+        "Comply with legal and regulatory obligations",
+        "Respond to inquiries and provide support",
+        "Notify you about events, updates, or policy changes",
+        "Protect against fraud and misuse"
+      ],
+      "note": "If you do not wish to receive marketing communications, contact us at"
+    },
+    "section7": {
+      "title": "Data Protection and Security",
+      "text": "We value your privacy but cannot guarantee 100% security. Contact us for security-related concerns:"
+    },
+    "section8": {
+      "title": "Access and Control",
+      "text": "You may view, edit, or delete your personal information at any time. Requests can be sent to",
+      "note": "We comply with all data breach notification laws."
+    },
+    "section9": {
+      "title": "Your Rights",
+      "list": [
+        "Right to access, rectify, or delete your data",
+        "Right to object to processing",
+        "Right to data portability",
+        "Right to withdraw consent"
+      ],
+      "note": "We may ask for ID before sharing personal information."
+    },
+    "section10": {
+      "title": "Contact Us",
+      "email": "Email:",
+      "address": "Address: Akva Pro - Internacionalna Plivacka Akademija, St. Georgi Dimitrov 11/12-14, P.O. Box 1000, Skopje, North Macedonia"
+    },
+    "section11": {
+      "title": "Policy Updates",
+      "text": "This policy may be updated on"
+    },
+    "section12": {
+      "title": "Consent",
+      "text": "By using our website, you consent to this Privacy Policy and its Terms & Conditions."
+    }
   }
 }
