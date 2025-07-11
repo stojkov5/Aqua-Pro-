@@ -1,0 +1,38 @@
+.privacy-wrapper {
+  background-color: rgba(0, 124, 247, 0.15);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+
+  
+  
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.privacy-inner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.privacy-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.privacy-inner h2 {
+  margin-top: 2rem;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  color: #ffffff;
+}
+
+.privacy-inner p,
+.privacy-inner ul {
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  line-height: 1.7;
+  color: #e0e0e0;
+}
+
+.privacy-inner a {
+  color: #9ed0ff;
+  text-decoration: underline;
+}

@@ -39,9 +39,9 @@ const Footer = () => {
                 <Link to="/team">{t("footer.links.coaches")}</Link>
               </li>
               <li>
-                <a href="/PrivacyPolicy.pdf" target="_blank">
-                  {t("footer.links.faq")}
-                </a>
+                <Link to="/privacy-policy">
+                  {t("footer.links.pp")}
+                </Link>
               </li>
               <li>
                 <a

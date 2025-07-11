@@ -10,6 +10,7 @@ import CompetitionSquad from "../src/components/CompetitionSquad";
 import TeamShop from "../src/pages/TeamShop";
 import Cart from "../src/components/Cart";
 import Gallery from "../src/components/Gallery";
+import PrivacyPolicy from "../src/components/PrivacyPolicy";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -52,6 +53,10 @@ const routes = createBrowserRouter([
         path: "/gallery",
         element: <Gallery />,
       },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
+      }
     ],
   },
 ]);
