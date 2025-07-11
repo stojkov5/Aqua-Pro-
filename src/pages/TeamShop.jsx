@@ -9,9 +9,23 @@ import "react-toastify/dist/ReactToastify.css";
 import "../styles/TeamShop.css";
 import productsData from "../data/products";
 
-const sizes = [
+// General clothing sizes
+const generalSizes = [
   "S", "M", "L", "XL",
   "4yo", "6yo", "8yo", "10yo", "12yo", "14yo (XS)"
+];
+
+// Male swimsuit sizes (Low waist)
+const maleSizes = [
+  "20 (60 cm)", "22 (65 cm)", "24 (70 cm)", "26 (75 cm)", "28 (80 cm)",
+  "30 (85 cm)", "32 (90 cm)", "34 (95 cm)", "36 (100 cm)", "38 (105 cm)", "40 (110 cm)"
+];
+
+// Female swimsuit sizes (Chest / Hips)
+const femaleSizes = [
+  "20 (Гради 55 / Колкови 65)", "22 (60 / 70)", "24 (65 / 75)", "26 (70 / 80)",
+  "28 (75 / 85)", "30 (80 / 90)", "32 (85 / 95)", "34 (90 / 100)",
+  "36 (95 / 105)", "38 (100 / 110)", "40 (105 / 115)"
 ];
 
 const fetchProducts = async () =>
@@ -157,9 +171,14 @@ const TeamShop = () => {
                       placeholder={t("teamShop.selectSizePlaceholder")}
                       value={selectedSize || undefined}
                       onChange={(val) => setSelectedSize(val)}
-                      style={{ width: 200 }}
+                      style={{ width: 250 }}
                     >
-                      {sizes.map((size) => (
+                      {(openProduct.gender === "male"
+                        ? maleSizes
+                        : openProduct.gender === "female"
+                        ? femaleSizes
+                        : generalSizes
+                      ).map((size) => (
                         <Select.Option key={size} value={size}>
                           {size}
                         </Select.Option>
