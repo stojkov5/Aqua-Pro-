@@ -54,7 +54,7 @@ const routes = createBrowserRouter([
         element: <Gallery />,
       },
       {
-        path: "/privacy-policy",
+        path: "/faq",
         element: <PrivacyPolicy />,
       }
     ],
